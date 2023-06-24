@@ -1,0 +1,21 @@
+ISim log file
+Running: /home/aeren/Okul/CENG232/Lab4/lab4_part1/testbench_RAM_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/aeren/Okul/CENG232/Lab4/lab4_part1/testbench_RAM_isim_beh.wdb 
+ISim P.20131013 (signature 0xfbc00daa)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Starting Testbench
+Finished circuit initialization process.
+CASE 1 passed..
+CASE 2 passed..
+CASE 3 passed..
+CASE 4 passed..
+Testbench was finished
+Stopped at time : 44 ns : File "/home/aeren/Okul/CENG232/Lab4/lab4_part1/testbench_RAM.v" Line 72
+# exit 0

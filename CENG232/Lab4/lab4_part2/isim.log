@@ -1,0 +1,76 @@
+ISim log file
+Running: /home/aeren/Okul/CENG232/Lab4/lab4_part2/testbench_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/aeren/Okul/CENG232/Lab4/lab4_part2/testbench_isim_beh.wdb 
+ISim P.20131013 (signature 0xfbc00daa)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+Time=6 | mode = 0 opCode = 000 value = 0001 reset = 0 | result =    0 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=16 | mode = 0 opCode = 011 value = 0001 reset = 0 | result =    0 cacheFull = 0 invalidOp = 1 overflow = 0
+Time=26 | mode = 0 opCode = 001 value = 0000 reset = 0 | result =    0 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=36 | mode = 0 opCode = 110 value = 0011 reset = 0 | result =    0 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=46 | mode = 0 opCode = 001 value = 0000 reset = 0 | result =    0 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=56 | mode = 1 opCode = 001 value = 0000 reset = 0 | result =    1 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=66 | mode = 1 opCode = 001 value = 0000 reset = 0 | result =    1 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=76 | mode = 1 opCode = 001 value = 0000 reset = 0 | result =    1 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=86 | mode = 1 opCode = 001 value = 0000 reset = 0 | result =    2 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=96 | mode = 1 opCode = 001 value = 0000 reset = 0 | result =    3 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=106 | mode = 1 opCode = 001 value = 0000 reset = 0 | result =    5 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=116 | mode = 1 opCode = 001 value = 0000 reset = 0 | result =    8 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=126 | mode = 1 opCode = 001 value = 0000 reset = 0 | result =   13 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=136 | mode = 1 opCode = 001 value = 0000 reset = 0 | result =   21 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=146 | mode = 1 opCode = 001 value = 0000 reset = 0 | result =   34 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=156 | mode = 1 opCode = 001 value = 0000 reset = 0 | result =   55 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=226 | mode = 1 opCode = 001 value = 0000 reset = 0 | result =  573 cacheFull = 0 invalidOp = 0 overflow = 1
+Time=236 | mode = 0 opCode = 100 value = 0000 reset = 0 | result =  573 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=246 | mode = 1 opCode = 100 value = 0000 reset = 0 | result =  536 cacheFull = 0 invalidOp = 0 overflow = 1
+Time=256 | mode = 1 opCode = 100 value = 0000 reset = 0 | result =    3 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=266 | mode = 0 opCode = 101 value = 0000 reset = 0 | result =    3 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=276 | mode = 1 opCode = 101 value = 0000 reset = 0 | result =  539 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=286 | mode = 1 opCode = 101 value = 0000 reset = 0 | result =    5 cacheFull = 0 invalidOp = 0 overflow = 0
+RES = 0000000101
+Time=296 | mode = 1 opCode = 101 value = 0000 reset = 0 | result =  640 cacheFull = 0 invalidOp = 0 overflow = 0
+RES = 1010000000
+Time=306 | mode = 0 opCode = 101 value = 0000 reset = 0 | result =  640 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=316 | mode = 0 opCode = 101 value = 0000 reset = 0 | result =  640 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=326 | mode = 0 opCode = 101 value = 0000 reset = 0 | result =  640 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=336 | mode = 0 opCode = 101 value = 0000 reset = 0 | result =  640 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=346 | mode = 0 opCode = 101 value = 0000 reset = 0 | result =  640 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=356 | mode = 0 opCode = 101 value = 0000 reset = 0 | result =  640 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=366 | mode = 0 opCode = 101 value = 0000 reset = 0 | result =  640 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=376 | mode = 0 opCode = 101 value = 0000 reset = 0 | result =  640 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=386 | mode = 0 opCode = 101 value = 0000 reset = 0 | result =  640 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=396 | mode = 0 opCode = 101 value = 0000 reset = 0 | result =  640 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=406 | mode = 0 opCode = 101 value = 0000 reset = 0 | result =  640 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=416 | mode = 0 opCode = 101 value = 0000 reset = 0 | result =  640 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=426 | mode = 0 opCode = 101 value = 0000 reset = 0 | result =  640 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=436 | mode = 0 opCode = 101 value = 0000 reset = 0 | result =  640 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=446 | mode = 0 opCode = 101 value = 0000 reset = 0 | result =  640 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=456 | mode = 0 opCode = 101 value = 0000 reset = 0 | result =  640 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=466 | mode = 0 opCode = 101 value = 0000 reset = 0 | result =  640 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=476 | mode = 0 opCode = 101 value = 0000 reset = 0 | result =  640 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=486 | mode = 0 opCode = 101 value = 0000 reset = 0 | result =  640 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=496 | mode = 0 opCode = 101 value = 0000 reset = 0 | result =  640 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=506 | mode = 0 opCode = 101 value = 0000 reset = 0 | result =  640 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=516 | mode = 0 opCode = 101 value = 0000 reset = 0 | result =  640 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=526 | mode = 0 opCode = 101 value = 0000 reset = 0 | result =  640 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=536 | mode = 0 opCode = 101 value = 0000 reset = 0 | result =  640 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=546 | mode = 0 opCode = 101 value = 0000 reset = 0 | result =  640 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=556 | mode = 0 opCode = 101 value = 0000 reset = 0 | result =  640 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=566 | mode = 0 opCode = 101 value = 0000 reset = 0 | result =  640 cacheFull = 1 invalidOp = 0 overflow = 0
+Time=576 | mode = 0 opCode = 101 value = 0000 reset = 0 | result =  640 cacheFull = 1 invalidOp = 0 overflow = 0
+Time=586 | mode = 0 opCode = 101 value = 0000 reset = 0 | result =  640 cacheFull = 1 invalidOp = 0 overflow = 0
+Time=596 | mode = 0 opCode = 101 value = 0000 reset = 1 | result =    0 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=606 | mode = 1 opCode = 101 value = 0000 reset = 0 | result =    0 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=616 | mode = 1 opCode = 101 value = 0000 reset = 0 | result =    0 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=626 | mode = 1 opCode = 101 value = 0000 reset = 0 | result =    0 cacheFull = 0 invalidOp = 0 overflow = 0
+Time=636 | mode = 1 opCode = 101 value = 0000 reset = 0 | result =    0 cacheFull = 0 invalidOp = 0 overflow = 0
+End of Sim!
+Stopped at time : 636 ns : File "/home/aeren/Okul/CENG232/Lab4/lab4_part2/testbench.v" Line 259
+# exit 0

@@ -1,0 +1,141 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+\usepackage{indentfirst}
+\usepackage{amsfonts}
+
+\begin{document}
+
+\section*{Student Information}
+
+Name : Ahmet Eren Çolak\\
+
+ID : 2587921\\
+
+\section*{Answer 1}
+\subsection*{a)}
+Confidence intervals for mean of a sample with known standart deviation can be calculated as:
+\begin{equation*}
+	\overline{x} \pm z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}}
+\end{equation*}
+Mean of sample above,$\overline{x}$ equals to $16.96$, sample size $n$ equals to $10$ and standart devation of sample $\sigma$ equals to $3$.\\
+For $\%90$ confidence interval $z_{0.05} = 1.645$.
+
+\begin{equation*}
+	(16.96 - z_{0.05} \cdot \frac{\sigma}{\sqrt{n}}, \ 16.96 + z_{0.05} \cdot \frac{\sigma}{\sqrt{n}})
+\end{equation*}
+\begin{equation*}
+	(15.38, \ 18.52)
+\end{equation*}
+
+For $\%99$ confidence interval $z_{0.005} = 2.57$.
+\begin{equation*}
+	(16.96 - z_{0.005} \cdot \frac{\sigma}{\sqrt{n}}, \ 16.96 + z_{0.005} \cdot \frac{\sigma}{\sqrt{n}})
+\end{equation*}
+\begin{equation*}
+	(14.52, \ 19.40)
+\end{equation*}
+
+\subsection*{b)}
+For $\%98$ confidence interval margin is $z_{0.01} \cdot \frac{\sigma}{\sqrt{n}}$ and $z_{0.01}$ equals to $2.33$.
+
+\begin{equation*}
+	z_{0.01} \cdot \frac{3}{\sqrt{n}} = 1.55
+\end{equation*}
+\begin{equation*}
+	\sqrt{n} = 4.51
+\end{equation*}
+\begin{equation*}
+	n = 20.34
+\end{equation*}
+
+$n$ must be at least $21$.
+
+\section*{Answer 2}
+\subsection*{a)}
+No, they are not enough. Standart deviation is also required to conduct a hypothesis about a restaurant.
+
+\subsection*{b)}
+%Reject explain **
+$H_0: \mu = 7.5$\\
+$H_A: \mu < 7.5$\\
+$\alpha = 0.05$\\
+$\overline{x} = 7.4$\\
+$s= 0.8$\\
+$n = 256$\\
+
+Since customer ratings are independent and identically distributed, sample mean $\overline{x}$ has a normal distribution. When null hypothesis $H_0$ is assumed to be true, $t$ value must be greater than $-t_{\alpha}$ with the degree of freedom $255$.
+
+\begin{equation*}
+	t = \frac{\overline{x} - \mu}{s / \sqrt{n}} = \frac{7.4 - 7.5}{0.8 / \sqrt{256}} = -2
+\end{equation*}
+\begin{equation*}
+	-t_{\alpha} = -t_{0.05} = -1.645
+\end{equation*}
+
+Since $-2$ is not greater than $-1.645$, null hypothesis is rejected. Thus, this restaurant would not be in my list.
+\subsection*{c)}
+%Accept Explain ***
+When $t$ value in previous part recalculated with $s= 1.0$:
+\begin{equation*}
+	t = \frac{\overline{x} - \mu}{s / \sqrt{n}} = \frac{7.4 - 7.5}{1 / \sqrt{256}} = -1.6
+\end{equation*}
+
+Since $-1.6$ is greater than $-1.645$, null hypothesis is accepted. Thus this restaurant would be in my list.
+\subsection*{d)}
+Since $7.6$ is greater than $7.5$, $t$ value will always be a positive number. Because of that, $t$ value will never be less than $-t_{\alpha} = -t_{0.05} = -1.645$. That is why, there is no need for a hypothesis test.
+
+\section*{Answer 3}
+\subsection*{a)}
+$H_0: \mu_A - \mu_B = 90$\\
+$H_A: \mu_A - \mu_B < 90$\\
+$\alpha = 0.01$\\
+$\overline{X}_A = 211$\\
+$\overline{X}_A = 133$\\
+$s_A= 5.2$\\
+$s_B = 22.8$\\
+$n_A = 20$\\
+$n_B = 32$\\
+
+When null hypothesis $H_0$ is assumed to be true, $t$ value must be greater than $-t_{\alpha}$ with the degree of freedom $50 \ (n_A + n_B - 2)$. The $t$ value when variances of $A$ and $B$ are assumed to be same, is:
+
+\begin{equation*}
+	t = \frac{ \overline{X}_A - \overline{X}_B - 90}{s_p \sqrt{1/n_A + 1/n_B}}
+\end{equation*}
+
+Where $s_p$, the pooled standart deviation is:
+
+\begin{equation*}
+	s_p = \sqrt{\frac{(n_A - 1)s_A^2 + (n_B - 1)s_B^2}{n_A + n_B - 2}} =  \sqrt{\frac{(19)5.2^2 + (31)22.8^2}{50}} = 18.237
+\end{equation*}
+
+Then $t$ value is:
+
+\begin{equation*}
+		t = \frac{ 211 - 133 - 90}{18.237 \sqrt{1/20 + 1/32}} = -2.308
+\end{equation*}
+
+$-t_{0.01}$ with the degree of freedom $50$ approximately equals to $-2.4$. Since $t$ value ($-2.308$) is greater than $-2.4$, null hypothesis is accepted. Researcher can claim that computer B provides a 90-minute or better performance when population variances are assumed to be same.
+
+\subsection*{b)}
+When population variances are not assumed to be same, $t$ value equals to:
+
+\begin{equation*}
+		t = \frac{ \overline{X}_A - \overline{X}_B - 90}{\sqrt{s_A^2/n_A + s_B^2/n_B}} = \frac{ 211 - 113 - 90}{\sqrt{5.2^2/20 + 22.8^2/32}} = -2.86
+\end{equation*}
+
+Degree of freedom for the $t_{\alpha}$ value is estimated by the Satterthwaite approximation:
+
+\begin{equation*}
+	\nu = \dfrac{\left (\dfrac{s_A^2}{n_A} + \dfrac{s_B^2}{n_B} \right )^2}{ \dfrac{s_A^4}{n_A^2(n_A-1)} + \dfrac{s_B^4}{n_B^2(n_B-1)} }
+\end{equation*}
+
+When all values subsituted $v$ is found to be approximately $36$. Thus $-t_{0.01}$ equals to approximately $-2.44$. Since $t$ value ($-2.86$) is not greater than $t_{0.01}$ ($-2.44$), null hypothesis is rejected. Hence researcher can not claim that computer B provides a 90-minute or better performance when population variances are not assumed to be same.
+\end{document}

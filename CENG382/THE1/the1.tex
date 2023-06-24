@@ -1,0 +1,335 @@
+\documentclass[12pt,a4paper, margin=1in]{article}
+\usepackage{fullpage}
+\usepackage{amsfonts, amsmath, pifont}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{tkz-euclide}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\usepackage{geometry}
+\geometry{
+ a4paper,
+ total={210mm,297mm},
+ left=10mm,
+ right=10mm,
+ top=5mm,
+ bottom=10mm,}
+\author{Çolak, Ahmet Eren\\ \texttt{e2587921@ceng.metu.edu.tr}}
+\title{CENG 382 - Analysis of Dynamic Systems \\
+20221\\
+Take Home Exam 1 Solutions}
+
+\newcommand\ddfrac[2]{\frac{\displaystyle #1}{\displaystyle #2}}
+
+\begin{document}
+\maketitle
+
+\noindent\rule{19cm}{1.2pt}
+
+\begin{enumerate}
+% Write your solutions in the following items.
+
+    \item % Q1
+        \begin{enumerate}
+            \item linear, time invariant, forced
+            \item linear, time variant, unforced
+            \item non-linear, time variant, forced
+        \end{enumerate}
+
+    \item % Q2
+        \begin{enumerate}
+            \item 
+            \begin{equation*}
+                \frac{dx}{dt} = \begin{bmatrix}
+                    2 & 2 \\
+                    5 & -1
+                \end{bmatrix} x + \begin{bmatrix}
+                    1 \\ 2
+                \end{bmatrix}, \ x_0 = \begin{bmatrix}
+                    -1 \\ 2
+                \end{bmatrix}
+            \end{equation*}
+            \newline
+
+            To simplify the problem, transformation below is applied.
+            \begin{equation*}
+                u = x + A^{-1}b
+            \end{equation*}
+            \begin{equation*}
+                \frac{du}{dt} = \frac{dx}{dt}
+            \end{equation*}
+            \begin{equation*}
+                \frac{du}{dt} = Au
+            \end{equation*}
+
+            Then fundamental solution matrix can be calculated as:
+            \begin{equation*}
+                X(t) = e^{At}
+            \end{equation*}
+
+            Matrix $A$, should be diagonalized to calculate $e^{At}$.
+            
+            \begin{equation*}
+                A = PDP^{-1}
+            \end{equation*}
+
+            \begin{equation*}
+                P = \begin{bmatrix}v_1 & v_2 \end{bmatrix}\ \ \ \text{where $v_1$ and $v_2$ are eigen vectors}
+            \end{equation*}
+            \begin{equation*}
+                D = \begin{bmatrix}
+                    \lambda_1 & 0\\
+                    0 & \lambda_2 
+                    \end{bmatrix} \ \ \ \text{where $\lambda_1$ and $\lambda_2$ are eigen velues}
+            \end{equation*}
+            \newline
+            Characteristic equation of $A$ is: $(\lambda-4)(\lambda + 3) = 0$. Therefore $\lambda_1 = 4$ and $\lambda_2 = -3$.
+            \clearpage
+            Solution for $v_1$:
+            \begin{equation*}
+                (A - 4I)v_1 = 0
+            \end{equation*}
+            \begin{equation*}
+                \begin{bmatrix}
+                    -2 & 2 \\
+                    5 & -5
+                \end{bmatrix}\begin{bmatrix}
+                    v_1 \\ v_2
+                \end{bmatrix} = 0
+            \end{equation*}
+            \begin{equation*}
+                v_1 = v_1
+            \end{equation*}
+            \begin{equation*}
+                v_1 = \begin{bmatrix}
+                    1 \\ 1
+                \end{bmatrix}
+            \end{equation*}
+
+            Solution for $v_2$:
+            \begin{equation*}
+                (A - (-3)I)v_1 = 0
+            \end{equation*}
+            \begin{equation*}
+                \begin{bmatrix}
+                    5 & 2 \\
+                    5 & 2
+                \end{bmatrix}\begin{bmatrix}
+                    v_1 \\ v_2
+                \end{bmatrix} = 0
+            \end{equation*}
+            \begin{equation*}
+                5v_1 = -2v_2
+            \end{equation*}
+            \begin{equation*}
+                v_2 = \begin{bmatrix}
+                    -2 \\ 5
+                \end{bmatrix}
+            \end{equation*}
+            
+            \bigskip \bigskip
+            
+            \begin{equation*}
+                P = \begin{bmatrix}
+                    1 & -2 \\
+                    1 & 5
+                \end{bmatrix}
+            \end{equation*}
+            \begin{equation*}
+                D = \begin{bmatrix}
+                    4 & 0 \\
+                    0 & -3
+                \end{bmatrix}
+            \end{equation*}
+            \begin{equation*}
+                P^{-1} = \frac{1}{7} \cdot \begin{bmatrix}
+                    5 & 2 \\
+                    -1 & 1
+                \end{bmatrix}
+            \end{equation*}
+            
+            \bigskip \bigskip
+
+            \begin{equation*}
+                e^{At} = \begin{bmatrix}
+                    1 & -2 \\
+                    1 & 5
+                \end{bmatrix} \begin{bmatrix}
+                    e^{4t} & 0 \\
+                    0 & e^{-3t}
+                \end{bmatrix} \begin{bmatrix}
+                    5 & 2 \\
+                    -1 & 1
+                \end{bmatrix} \cdot \frac{1}{7}
+            \end{equation*}
+
+            \begin{equation*}
+                e^{At} = \begin{bmatrix}
+                    \ddfrac{5e^{4t} + 2e^{-3t}}{7} & \ddfrac{2e^{4t} - 2e^{-3t}}{7} \\[8pt]
+                    \ddfrac{5e^{4t} - 5e^{-3t}}{7} & \ddfrac{2e^{4t} + 5e^{-3t}}{7}
+                \end{bmatrix}
+            \end{equation*}
+
+            State transition matrix $\phi(t, l)$, equals to $X(t)X^{-1}(l)$ where $X(t) = e^{At}$. Then $\phi(t, 0)u(0)$ is the solution $u(t)$, with the initial condition $u(0)$.
+            Since $X^{-1}(0) = I$, $u(t) = X(t)u(0)$ where $u(0)$ is $x(0) + A^{-1}b$
+
+            \begin{equation*}
+                A^{-1}b = \begin{bmatrix}
+                    \ddfrac{5}{12} \\[8pt]
+                    \ddfrac{1}{12}
+                \end{bmatrix}
+            \end{equation*}
+
+            \begin{equation*}
+                u(0) = x(0) + A^{-1}b = \begin{bmatrix}
+                    \ddfrac{-7}{12} \\[8pt]
+                    \ddfrac{25}{12}
+                \end{bmatrix}
+            \end{equation*}
+
+            \begin{equation*}
+                u(t) = X(t)u(0) = \begin{bmatrix}
+                    \ddfrac{5e^{4t}}{28} - \ddfrac{16e^{-3t}}{21} \\[8pt]
+                    \ddfrac{5e^{4t}}{28} - \ddfrac{40e^{-3t}}{21}
+                \end{bmatrix}
+            \end{equation*}
+
+            \begin{equation*}
+                x(t) = u(t) -  A^{-1}b = \begin{bmatrix}
+                    \ddfrac{5e^{4t}}{28} - \ddfrac{16e^{-3t}}{21} - \ddfrac{5}{12}\\[8pt]
+                    \ddfrac{5e^{4t}}{28} - \ddfrac{40e^{-3t}}{21} - \ddfrac{1}{12}
+                \end{bmatrix}
+            \end{equation*}
+            
+            \item 
+            System diverges as $t$ goes to $\infty$ because of the terms including $e^{4t}$.
+        \end{enumerate}
+        
+    \item % Q3
+        Fixed point of the system is where $\dot{x} = -7x + 5 = 0$.
+        Therefore, $x=5/7$ is the fixed point of the system. \newline
+
+        Apply transformation $u = x - 5/7$. Then equation becomes $\dot{u} = -7u$.
+        \begin{equation*}
+            u(t) = u(0)e^{-7t}
+        \end{equation*}
+        \begin{equation*}
+            u(0) = x(0) - \frac{5}{7}
+        \end{equation*}
+        \begin{equation*}
+            x(t) = (x(0) - \frac{5}{7})e^{-7t} + \frac{5}{7}
+        \end{equation*}
+
+        As $t$ goes to $\infty$, $x(t)$ is going to converge to $5/7$ because the term with $e^{-7t}$ will converge to $0$.
+        
+    \item % Q4 
+        Define $y_1, y_2, y_3$ as:
+        \begin{equation*}
+            y_1 = x
+        \end{equation*}
+        \begin{equation*}
+            y_2 = \frac{dx}{dt}
+        \end{equation*}
+        \begin{equation*}
+            y_3 = \frac{d^2x}{dt^2}
+        \end{equation*}
+
+        Then derivatives of $y_1, y_2, y_3$ are:
+        \begin{equation*}
+            \frac{dy_1}{dt} = y_2
+        \end{equation*}
+        \begin{equation*}
+            \frac{dy_2}{dt}  = y_3
+        \end{equation*}
+        \begin{equation*}
+            \frac{dy_3}{dt} = -t^3y_3 -(t+1)y_2 + y_1 + 2t +1
+        \end{equation*}
+        
+        \bigskip
+
+        \begin{equation*}
+            \begin{bmatrix}
+                \ddfrac{dy_1}{dt} \\[8pt] \ddfrac{dy_2}{dt} \\[8pt] \ddfrac{dy_3}{dt}  
+            \end{bmatrix} = \begin{bmatrix}
+                0 & 1 & 0 \\
+                0 & 0 & 1 \\
+                1 & -(t+1) & -t^3
+            \end{bmatrix} \begin{bmatrix}
+                y_1 \\ y_2 \\ y_3
+            \end{bmatrix} + \begin{bmatrix}
+                0 \\ 0 \\ 2t + 1
+            \end{bmatrix}
+        \end{equation*}
+    \item % Q5
+        \begin{enumerate}
+            \item Solution for the initial value $\begin{bmatrix}
+                    1 \\ 0
+                \end{bmatrix}$:
+
+                \begin{equation*}
+                    x(1) = \begin{bmatrix}1 \\ 2\end{bmatrix},\
+                    x(2) = \begin{bmatrix}1 \\ 5\end{bmatrix},\
+                    x(3) = \begin{bmatrix}1 \\ 9\end{bmatrix},\
+                    x(4) = \begin{bmatrix}1 \\ 14\end{bmatrix}, \ ...
+                \end{equation*}
+
+                Pattern above is following the equation: $\begin{bmatrix}1 \\ \ddfrac{(k+1)(k+2)-2}{2}\end{bmatrix}$. Hence solution for this initial condition is 
+                $\begin{bmatrix}1 \\ \ddfrac{(k+1)(k+2)-2}{2}\end{bmatrix}$.
+                
+                \bigskip \bigskip
+                Solution for the initial value $\begin{bmatrix}0 \\ 1\end{bmatrix}$:
+
+                \begin{equation*}
+                    x(k) = \begin{bmatrix}0 \\ 1\end{bmatrix}
+                \end{equation*}
+
+                $x(k)$ is constant and equals to its initial value.
+
+                Fundamental solution matrix is therefore equals to $X(k) = \begin{bmatrix}
+                    1 & 0 \\ \ddfrac{(k+1)(k+2)-2}{2} & 1
+                \end{bmatrix}$
+            \item 
+                \begin{equation*}
+                    \phi(k, 0) = X(k)X^{-1}(0) = X(k)I = X(k) = \begin{bmatrix}
+                        1 & 0 \\ \ddfrac{(k+1)(k+2)-2}{2} & 1
+                    \end{bmatrix}
+                \end{equation*}
+            \item 
+                \begin{equation*}
+                    \tilde{x} = \begin{bmatrix}
+                        1 & 0 \\
+                        k+2 & 1
+                    \end{bmatrix}\tilde{x}
+                \end{equation*}
+
+                \begin{equation*}
+                    \tilde{x_1} = \tilde{x_1}
+                \end{equation*}
+                \begin{equation*}
+                    \tilde{x_2} = \tilde{x_1}(k+2) + \tilde{x_2}
+                \end{equation*}
+                \begin{equation*}
+                    \tilde{x_1}(k+2) = 0
+                \end{equation*}
+                Equations above only satisfied when $\tilde{x_1} = 0$ and any $\tilde{x_2}$. Hence, $\begin{bmatrix}
+                    0 \\ x_2
+                \end{bmatrix}$ is the set of fixed points of the system.
+
+                \bigskip
+
+                \begin{equation*}
+                    x(k) = \phi(k, 0)x(0) = \begin{bmatrix}
+                        x_1(0) \\ x_1(0)\ddfrac{(k+1)(k+2)-2}{2} + x_2(0)
+                    \end{bmatrix}
+                \end{equation*}
+
+                System will only converge to the fixed point, if $x_1(0) = 0$. 
+                The fixed point is not stable because system will not converge to it unless 
+                its initial condition is one of the fixed points. 
+        \end{enumerate}
+
+\end{enumerate}
+
+\end{document}

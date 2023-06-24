@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<generated_project xmlns="http://www.xilinx.com/XMLSchema" xmlns:xil_pn="http://www.xilinx.com/XMLSchema">
+
+  <!--                                                          -->
+
+  <!--             For tool use only. Do not edit.              -->
+
+  <!--                                                          -->
+
+  <!-- ProjectNavigator created generated project file.         -->
+
+  <!-- For use in tracking generated file and other information -->
+
+  <!-- allowing preservation of process status.                 -->
+
+  <!--                                                          -->
+
+  <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved. -->
+
+  <version xmlns="http://www.xilinx.com/XMLSchema">11.1</version>
+
+  <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="lab3_1.xise"/>
+
+  <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:fileType="FILE_LSO" xil_pn:name=".lso"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="_ngo"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ab.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="ab.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="ab.xst"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="ic1337.bld"/>
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="ic1337.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="ic1337.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="ic1337.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="ic1337.ngr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ic1337.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="ic1337.stx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="ic1337.syr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="ic1337.xst"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="ic1337_ngdbuild.xrpt"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="ic1337_summary.html"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="ic1337_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="testbench_ab_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="testbench_ic1337_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="testbench_ic1337_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="testbench_ic1337_isim_beh.wdb"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
+  </files>
+
+  <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1652270916" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1652270916">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1652432392" xil_pn:in_ck="6055444854455924390" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1652432392">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="lab3_1.v"/>
+      <outfile xil_pn:name="testbench_ab.v"/>
+      <outfile xil_pn:name="testbench_ic1337.v"/>
+      <outfile xil_pn:name="testbench_ic1337_1.v"/>
+    </transform>
+    <transform xil_pn:end_ts="1652360434" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="1333002825974404688" xil_pn:start_ts="1652360434">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1652360434" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-6971718965341769070" xil_pn:start_ts="1652360434">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1652270916" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-4211560087521776125" xil_pn:start_ts="1652270916">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1652432392" xil_pn:in_ck="6055444854455924390" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1652432392">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="lab3_1.v"/>
+      <outfile xil_pn:name="testbench_ab.v"/>
+      <outfile xil_pn:name="testbench_ic1337.v"/>
+      <outfile xil_pn:name="testbench_ic1337_1.v"/>
+    </transform>
+    <transform xil_pn:end_ts="1652432394" xil_pn:in_ck="6055444854455924390" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="7982044926755353921" xil_pn:start_ts="1652432392">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="fuse.log"/>
+      <outfile xil_pn:name="isim"/>
+      <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="testbench_ic1337_beh.prj"/>
+      <outfile xil_pn:name="testbench_ic1337_isim_beh.exe"/>
+      <outfile xil_pn:name="xilinxsim.ini"/>
+    </transform>
+    <transform xil_pn:end_ts="1652432394" xil_pn:in_ck="-4130177699263410247" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="4571755523704731108" xil_pn:start_ts="1652432394">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="isim.cmd"/>
+      <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="testbench_ic1337_isim_beh.wdb"/>
+    </transform>
+    <transform xil_pn:end_ts="1652190825" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1652190825">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1652190825" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="-9092942556711611181" xil_pn:start_ts="1652190825">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1652190825" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="-4211560087521776125" xil_pn:start_ts="1652190825">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1652190825" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1652190825">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1652190825" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="-3585827201492847087" xil_pn:start_ts="1652190825">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1652190825" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="5199527252397519575" xil_pn:start_ts="1652190825">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1652190825" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="1092181063246053517" xil_pn:start_ts="1652190825">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1652190832" xil_pn:in_ck="4731963454006" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="1156653566057529354" xil_pn:start_ts="1652190825">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
+      <outfile xil_pn:name="ic1337.lso"/>
+      <outfile xil_pn:name="ic1337.ngc"/>
+      <outfile xil_pn:name="ic1337.ngr"/>
+      <outfile xil_pn:name="ic1337.prj"/>
+      <outfile xil_pn:name="ic1337.stx"/>
+      <outfile xil_pn:name="ic1337.syr"/>
+      <outfile xil_pn:name="ic1337.xst"/>
+      <outfile xil_pn:name="ic1337_xst.xrpt"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+      <outfile xil_pn:name="xst"/>
+    </transform>
+    <transform xil_pn:end_ts="1652190832" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="5069202361602110268" xil_pn:start_ts="1652190832">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1652190837" xil_pn:in_ck="5014596546890304" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="5976933763432184838" xil_pn:start_ts="1652190832">
+      <status xil_pn:value="FailedRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <outfile xil_pn:name="_ngo"/>
+      <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+      <outfile xil_pn:name="ic1337.bld"/>
+      <outfile xil_pn:name="ic1337_ngdbuild.xrpt"/>
+    </transform>
+  </transforms>
+
+</generated_project>

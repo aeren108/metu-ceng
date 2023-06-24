@@ -1,0 +1,147 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+\usepackage{indentfirst}
+\usepackage{amsfonts}
+
+\begin{document}
+
+\section*{Student Information}
+
+Name : Ahmet Eren Çolak\\
+
+ID : 2587921\\
+
+
+\section*{Answer 1}
+\subsection*{a)}
+$X$ and $Y$ are independent if and only if their joint density function can be factored into their marginal PDFs. From the part b, it is known that:
+	\begin{equation*}
+		f(x) = \frac{2 \sqrt{1-x^2}}{\pi}
+	\end{equation*}
+	\begin{equation*}
+		f(y) = \frac{2 \sqrt{1-y^2}}{\pi}
+	\end{equation*}
+Since $f(x)f(y) \neq 1/\pi$, $X$ and $Y$ are not independent.
+\subsection*{b)}
+	\begin{equation*}
+		f(x) = \int_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}}\frac{1}{\pi}dy = \frac{2 \sqrt{1-x^2}}{\pi}
+	\end{equation*}
+	\begin{equation*}
+		f(y) = \int_{-\sqrt{1-y^2}}^{\sqrt{1-y^2}}\frac{1}{\pi}dx = \frac{2 \sqrt{1-y^2}}{\pi}
+	\end{equation*}
+\subsection*{c)}
+	\begin{equation*}
+		E(X) = \int_{-1}^{1}\frac{2x \sqrt{1-x^2}}{\pi}dx = 0
+	\end{equation*}
+\subsection*{d)}
+	\begin{equation*}
+		Var(X) = \int_{-1}^{1}\frac{2x^2 \sqrt{1-x^2}}{\pi}dx = 0.25
+	\end{equation*}
+
+\section*{Answer 2}
+\subsection*{a)}
+Since $A$ and $B$ are independent, product of their marginal PDFs is the joint density function.
+	\begin{equation*}
+		f(t_A) = \frac{1}{100}
+	\end{equation*}
+	\begin{equation*}
+		f(t_B) = \frac{1}{100}
+	\end{equation*}
+	Then $f(t_A, t_B) = f(t_A)f(t_B)$
+	\begin{equation*}
+		f(t_A, t_B) = \frac{1}{100} \cdot \frac{1}{100} = 10^{-4}
+	\end{equation*}
+\subsection*{b)}
+Probability that $A$ pushes the button in the first $10$ seconds is $P(0 < A < 10)$ and the probability that $B$ pushed the button in the last $10$ seconds is $P(90 < B < 100)$. Probability of both events occuring equals product of their individual probabilities.
+	\begin{equation*}
+		P(0 < A < 10) = \frac{10-0}{100} = 0.1 \ \ P(90 < B < 100) = \frac{100-90}{100} = 0.1
+	\end{equation*}
+	\begin{equation*}
+		P(0 < A < 10 \cap 90 < B < 100) = 0.1 \cdot 0.1 = 0.01
+	\end{equation*}
+\subsection*{c)}
+When $A$ and $B$ considered on a coordinate system, let $t_A$ be the axis for the values of $A$ and $t_B$ be the axis for the values of $B$. Then $z$ axis will be equal to joint density function $f(t_A, t_B)$. Bounded region between lines $t_B = t_A - 20$, $t_B = 100$, $t_A = 100$ and axises is the area where $A$ pushes the button at most $20$ seconds after $B$.
+	\begin{equation*}
+		P(A-B < 20)=\int_{0}^{80} \int_{0}^{t_B+20} f(t_A, t_B) dt_Adt_B + \int_{80}^{100} \int_{0}^{100} f(t_A, t_B) dt_Adt_B
+	\end{equation*}
+	\begin{equation*}
+		P(A-B < 20)=\int_{0}^{80} \int_{0}^{t_B+20} 10^{-4}\cdot dt_Adt_B + \int_{80}^{100} \int_{0}^{100} 10^{-4}\cdot dt_Adt_B = 0.68
+	\end{equation*}
+\subsection*{d)}
+Probability that elapsed time is less than $30$ seconds is $P(|A-B|<30)$. Therefore bounded region between lines $t_A-t_B=30$, $t_A-t_B=-30$, $t_A=100$, $t_B = 100$ and axises is the area where elapsed time is less than $30$ seconds.
+	\begin{equation*}
+		P(|A-B|<30)=\int_{0}^{100} \int_{t_A+30}^{t_A-30} f(t_A, t_B) dt_Bdt_A - 2\int_{70}^{100} \int_{100}^{t_A-30} f(t_A, t_B) dt_Bdt_A
+	\end{equation*}
+	\begin{equation*}
+		P(|A-B|<30)=\int_{0}^{100} \int_{t_A+30}^{t_A-30} 10^{-4}\cdot dt_Bdt_A - 2\int_{70}^{100} \int_{100}^{t_A-30} 10^{-4}\cdot dt_Bdt_A= 0.51
+	\end{equation*}
+
+\section*{Answer 3}
+\subsection*{a)}
+CDF of T equals to $P(min(X_1, X_2, \dots, X_n) \leq t)$ which is the area under the minimum of PDFs of $X$s on the interval $(0,t)$.
+	\begin{equation*}
+		 \int_{0}^{t}min(\lambda _1e^{-\lambda _1t}, \lambda _2e^{-\lambda _2t}, \dots, \lambda _ne^{-\lambda _nt})dt
+	\end{equation*}
+\subsection*{b)}
+Let $T$ be a random variable representing the time past until one of the computers fail. Then $T$ must be equal to $min(C_1, C_2, \dots, C_{10})$. First find the CDF of $T$ using the equation found from the part a.
+
+Intersection point of PDF of $C_1$ and $C_{10}$ is $-ln(0.1) / 0.9 = 2.558$. Therefore minimum of PDFs is $0.1e^{-0.1t}$ on the interval $(0, 2.558)$ and $e^{-t}$ on the interval $(2.558, \infty)$.
+Then $F(t)$, CDF of $T$, for $t \in (0,2.558)$ is:
+	\begin{equation*}
+		\int_{0}^{t}0.1e^{-0.1t}dt = 1-e^{-0.1t}
+	\end{equation*}
+And on for $t\in(2.558, \infty)$:
+	\begin{equation*}
+		\int_{0}^{t}e^{-t}dt = 1-e^{-0.1t} = 1-e^{-t}
+	\end{equation*}
+
+Then $f(t)$, PDF of $T$, is:
+	\begin{equation*}
+		f(t) = 0.1e^{-0.1t} \ \ , \ \ t \in (0, 2.558)
+	\end{equation*}
+	\begin{equation*}
+		f(t) = e^{-t} \ \ , \ \ t \in (2.558, \infty)
+	\end{equation*}
+
+Now $E(T)$ can be calculated.
+
+\begin{equation*}
+	E(T) = \int_{0}^{2.558} 0.1te^{-0.1t} dt + \int_{2.558}^{\infty} te^{-t} \approx 0.55
+\end{equation*}
+Expected time before one of the computers fail is $0.55$ years.
+
+\section*{Answer 4}
+\subsection*{a)}
+The probability that at least $70\%$ of participants being undergraduate students equals to binomial cdf $1-P(X \leq 69)$ where $p=0.74$ and $n=100$. Since binomial distribution is summation of Bernouilli trials, central limit theorem can be used to approximate this calculation.
+	\begin{equation*}
+		1-P(X \leq 69) = 1-P \left(\frac{S_n - \mu}{\sigma}  \leq \frac{69.5 - \mu}{\sigma} \right)
+	\end{equation*}
+Since binomial distribution is discrete, continuity correction must be applied. That's why $69.5$ appears in the equation. When $\mu = np = 74$ and $\sigma = \sqrt{np(1-p)} = 4.386$ substitued in the equation above:
+	\begin{equation*}
+		1-P(X \leq 69) = 1-P \left( \frac{S_n - 74}{4.386}  \leq \frac{69.5 - 74}{4.386} \right)
+	\end{equation*}
+	\begin{equation*}
+		1-P(X \leq 69) = 1-\phi(-1.0260) = 0.8476
+	\end{equation*}
+\subsection*{b)}
+The probability that at most $5\%$ of participants pursuing a doctoral degree equals to binomial cdf $P(X \leq 5)$ where where $p=0.1$ and $n=100$. As explained in the part a, central limit theorem can also be used to approximate this calculation.
+	\begin{equation*}
+		P(X \leq 5) = P \left(\frac{S_n - \mu}{\sigma}  \leq \frac{5.5 - \mu}{\sigma} \right)
+	\end{equation*}
+When When $\mu = np = 10$ and $\sigma = \sqrt{np(1-p)} = 3$ substitued in the equation above:
+	\begin{equation*}
+		P(X \leq 5) = P \left(\frac{S_n - 10}{3}  \leq \frac{5.5 - 10}{3} \right)
+	\end{equation*}
+	\begin{equation*}
+		P(X \leq 5) = \phi(-1.8333) = 0.0668
+	\end{equation*}
+\end{document}
+

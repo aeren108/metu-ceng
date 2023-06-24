@@ -1,0 +1,21 @@
+input: '001'
+blank: ' '
+start state: zero
+table:
+  zero:
+    0: {write: ' ', R: end}
+    1: {R: reject}
+    ' ': {R: accept}
+  one:
+    1: {write: ' ', L: start}
+    [0, ' ']: {R: reject}
+  end:
+    [1, 0]: R
+    ' ': {L: one}
+  start:
+    [1, 0]: L
+    ' ': {R: zero}
+    
+  accept:
+  reject:
+  

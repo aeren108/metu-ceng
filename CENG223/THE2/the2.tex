@@ -1,0 +1,165 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[dvips]{graphicx}
+\usepackage{fancybox}
+\usepackage{verbatim}
+\usepackage{array}
+\usepackage{latexsym}
+\usepackage{alltt}
+\usepackage{hyperref}
+\usepackage{textcomp}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{rotating}
+\usepackage{tikz}
+%\usepackage{fitch}  % to use fitch
+\usepackage{float}
+\usepackage[hmargin=3cm,vmargin=5.0cm]{geometry}
+%\topmargin=0cm
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+%\setlength{\leftmargin}{-5cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+
+\begin{document}
+	\section*{Student Information } 
+	%Write your full name and id number between the colon and newline
+	%Put one empty space character after colon and before newline
+	Full Name :  Ahmet Eren {\c C}olak \newline
+	Id Number :  2587921 
+
+	\section*{Q. 1}
+	\begin{center}
+		\begin{align*}
+			(A \cup B) \setminus (A \cap B) &= \{x \mid x \in (A \cup B) \wedge x \notin (A \cap B)\} && \text{by definiton of set difference}\\
+			&= \{x \mid x \in (A \cup B) \wedge \neg (x \in (A \cap B))\} && \text{by definiton of $\notin$}\\
+			&= \{x \mid (x \in A \vee x \in B) \wedge \neg (x \in A \wedge x \in B))\} && \text{by definition of set union} \\
+			&= \{x \mid (x \in A \vee x \in B) \wedge (\neg (x \in A) \vee \neg (x \in B))\} && \text{by De Morgan's law}\\
+			&= \{x \mid ((x \in A) \wedge (\neg (x \in A) \vee \neg (x \in B)))\\
+			&\quad \ \; \vee ((x \in B) \wedge (\neg (x \in A) \vee \neg (x \in B)))\} && \text{by distributive laws} \\
+			&= \{x \mid (((x \in A) \wedge \neg (x \in A)) \vee ((x \in A) \wedge \neg (x \in B))) \\ 
+			&\quad \ \; \vee (((x \in B) \wedge \neg (x \in A)) \vee ((x \in B) \wedge \neg (x \in B)))\} && \text{by distributive laws}\\
+			&= \{x \mid (F \vee ((x \in A) \wedge \neg (x \in B)))\\ 
+			&\quad \ \; \vee (((x \in B) \wedge \neg (x \in A)) \vee F)\} && \text{by complement laws}\\
+			&= \{x \mid ((x \in A) \wedge \neg (x \in B)) \vee ((x \in B) \wedge \neg (x \in A))\} && \text{by identity laws}\\
+			&= \{x \mid ((x \in A) \wedge  (x \notin B)) \vee ((x \in B) \wedge (x \notin A))\} && \text{by definiton of $\notin$}\\
+			&= \{x \mid x \in (A \setminus B) \vee x \in (B \setminus A)\} && \text{by definiton of set difference}\\
+			&= (A \setminus B) \cup (B \setminus A) && \text{by definition of set union}
+		\end{align*}
+	\end{center}
+	
+	\section*{Q. 2}
+	\begin{equation*}
+		A=\{f \mid f \subseteq  \mathbb{N} \times \{0,1 \} \}
+	\end{equation*}
+	\begin{equation*}
+		B=\{f \mid f :  \{0,1 \} \rightarrow \mathbb{N}, \text{ f is a function} \}
+	\end{equation*}
+
+	Set $A$ can be represented as:
+	\begin{equation*}
+		A=\mathcal{P} (\{ (0, 0), (1, 0), (2,0) \dots, (0, 1), (1, 1), (2,1), \dots \})
+	\end{equation*}
+
+	For an arbitrary value of $x$ in the domain of a function $f$, let $(x, f(x))$ represent function $f$. Then set $B$ can be expressed as:
+	
+	\begin{equation*}
+		B=\mathcal{P}\{ (0, n_1), (1, n_2)\} \ \ \ \ \ \text{$n_1, n_2 \in \mathbb{N}$}
+	\end{equation*} 
+	\begin{equation*}
+		B=\{\{ (0, n_1), (1, n_2) \}, \{ (0, n_1) \}, \{ (1, n_2) \}, \emptyset \} \ \ \ \ \text{$n_1, n_2 \in \mathbb{N}$} 
+	\end{equation*}
+
+	When common elements in $A$ and $B$ considered, there are 9 of them:
+	
+	\begin{equation*}
+		\{(0,0), (1, 0)\}, \{(0,0), (1, 1)\}, \{(0,1), (1, 0)\}, \{(0,1), (1, 1)\},
+		\{(0,0)\}, \{(0,1)\}, \{(1,0)\}, \{(1,1)\}, \emptyset
+	\end{equation*}
+	
+	To prove $A \setminus B$ is uncountable, let $s_1, s_2, s_3, \dots$ denote the elements of set $B$, letter N denote absence of the element in the subset and letter Y denote existence of the element in the subset. 
+	
+	Let's represent the first 9 elements of the set $A$ as the 9 common elements of set $A$ and $B$. These 9 elements can be written as below:
+	\begin{center}
+		\begin{align*}
+			& \ \ \ \ \rotatebox{90}{(0,0) } \  \rotatebox{90}{(0,1)} \  \rotatebox{90}{(1,0)} \  \rotatebox{90}{(1,1)} \ \dots\\
+			s_1 &= \text{Y, N, Y, N, N, N, $\dots$}\\
+			s_2 &= \text{Y, N, N, Y, N, N, $\dots$}\\
+			s_3 &= \text{N, Y, Y, N, N, N, $\dots$}\\
+			s_4 &= \text{N, Y, N, Y, N, N, $\dots$}\\
+			s_5 &= \text{Y, N, N, N, N, N, $\dots$}\\
+			s_6 &= \text{N, Y, N, N, N, N, $\dots$}\\
+			s_7 &= \text{N, N, Y, N, N, N, $\dots$}\\
+			s_8 &= \text{N, N, N, Y, N, N, $\dots$}\\
+			s_9 &= \text{N, N, N, N, N, N, $\dots$}\\
+		\end{align*}
+	\end{center}
+	
+	To represent the elements of $A \setminus B$, elements of set $A$ can be written starting from $s_{10}$. By Cantor's diagonal argument, it can be concluded that $A \setminus B$ is uncountably infinite.
+
+	\begin{center}
+		\begin{align*}
+			& \ \ \ \ \rotatebox{90}{(0,0) } \ \, \rotatebox{90}{(0,1)} \ \rotatebox{90}{(1,0)} \  \rotatebox{90}{(1,1)} \ \rotatebox{90}{(2,1)} \ \rotatebox{90}{(0,2)} \ \rotatebox{90}{(3,1)} \ \dots\\
+			s_{10} &= \text{\textbf{Y}, Y, Y, Y, Y, Y, Y, $\dots$}\\
+			s_{11} &= \text{N, \textbf{N}, N, Y, Y, N, N, $\dots$}\\
+			s_{12} &= \text{Y, N, \textbf{Y}, N, Y, N, Y, $\dots$}\\
+			s_{13} &= \text{N, Y, N, \textbf{Y}, N, Y, N, $\dots$}\\
+			s_{14} &= \text{Y, N, N, Y, \textbf{Y}, N, Y, $\dots$}\\
+			s_{15} &= \text{Y, Y, N, Y, Y, \textbf{N}, Y, $\dots$}\\
+			s_{16} &= \text{N, N, N, Y, N, Y, \textbf{N}, $\dots$}\\
+			\vdots &
+		\end{align*}
+	\end{center}
+		
+	\section*{Q. 3}
+	Let's assume that the function $f(n)=4^n + 5n^2logn$ is $O(2^n)$. Then, there must be a pair of witnesses $C$ and $k$ such that $f(n)=4^n + 5n^2logn \leq C2^n$ whenever $n > k$.
+	
+	\begin{center}
+		\begin{align*}
+			4^n + 5n^2logn &\leq C(2^n)\\
+			2^n + \frac{5n^2logn}{2^n} &\leq C \ \ \ \ \text{(both sides divided by $2^n$)}\\
+		\end{align*}
+	\end{center}
+	
+	Since left hand side of the inequality is always increasing, there can not be a constant $C$, whatever $k$ is. Therefore $f(n)$ is not $O(2^n)$.
+	
+	\section*{Q. 4}
+	\begin{center}
+		\begin{align*}
+			(2x-1)^n - x^2 &\equiv -x-1 \mod (x-1)\\
+			(2x-1)^n - x + 2 &\equiv x^2 - 2x + 1 \mod (x-1) && \text{by adding $x^2-x+2$ to both sides}\\
+			(2x-1)^n - x + 2 &\equiv (x-1)^2\mod (x-1) && \text{by rewriting left hand side as a square}\\
+			(2(x-1)+1)^n - x + 2 &\equiv (x-1)^2\mod (x-1) && \text{by algebraic manipulations}\\
+			(2(x-1)+1)^n - x + 2 &- (x-1)^2\mod (x-1)= 0 && \text{by definition of congruence modulo}
+		\end{align*}
+	\end{center}
+	
+	Using the equality: $a + b \mod m = ((a \mod m) + (b \mod m))  \mod m$, the last equation can be written as:
+	
+	\begin{equation*}
+		((2(x-1)+1)^n \mod (x-1)) + (-(x-1) +1 \mod (x-1)) - ((x-1)^2\mod (x-1))=0
+	\end{equation*}
+
+	Using the equality: $ab \mod m = (a \mod m)(b \mod m) \mod m$, the first term, $(2(x-1) + 1)^n \mod (x-1)$, can be written as $(2(x-1) + 1 \mod (x-1))^n$.
+	Since $(2(x-1) + 1) \mod (x-1)$ is equal to $1$, first term is equal to $1^n = 1$.
+	
+	Second term, $-(x-1) +1 \mod (x-1)$, is equal to $1$ and last term, $((x-1)^2\mod (x-1))$, is equal to $0$. Hence $(1 + 1 + 0) \mod (x-1) = 0$, it can be written as:
+	
+	\begin{equation*}
+		2 = (x-1) \cdot k + 0\ \ \ \ \ \ \text{$k\in \mathbb{Z}$}
+	\end{equation*}
+	To leave $x$ alone, divide both sides by $k$ and add $1$ to both sides:
+	\begin{equation*}
+		x = \frac{2+k}{k}
+	\end{equation*}
+	
+	$k=1$, is the only situation where $x > 2$ and $x \in \mathbb{Z}$. When $k=1$, \textbf{$x=3$.}
+	
+	% add / remove sections etc as needed 
+	% use your own format
+	
+\end{document}
+

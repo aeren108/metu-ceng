@@ -1,0 +1,381 @@
+\documentclass[10pt,a4paper, margin=1in]{article}
+\usepackage{fullpage}
+\usepackage{amsfonts, amsmath, pifont}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{float}
+
+\usepackage{tkz-euclide}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.13}
+
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={210mm,297mm},
+ left=10mm,
+ right=10mm,
+ top=10mm,
+ bottom=10mm,
+ }
+ % Write both of your names here. Fill exxxxxxx with your ceng mail address.
+ \author{
+  Çavuşoğlu, Arda\\
+  \texttt{e2448249@ceng.metu.edu.tr}
+  \and
+  Çolak, Ahmet Eren\\
+  \texttt{e2587921@ceng.metu.edu.tr}
+}
+
+\title{CENG 384 - Signals and Systems for Computer Engineers \\
+Spring 2023 \\
+Homework 3}
+\begin{document}
+\maketitle
+
+\colorlet{myblue}{blue!80!black}
+\colorlet{mydarkblue}{myblue!80!black}
+\tikzstyle{xline}=[myblue,very thick]
+\def\tick#1#2{\draw[thick] (#1) ++ (#2:0.1) --++ (#2-180:0.2)}
+
+\noindent\rule{19cm}{1.2pt}
+
+\begin{enumerate}
+
+\item %write the solution of q1
+    \begin{equation*}
+        \int_{-\infty}^{t}x(s)ds = \int_{-\infty}^{t} \sum_{k=-\infty}^{\infty} a_k e^{jkw_0s}ds
+    \end{equation*}
+    \begin{equation*}
+        \int_{-\infty}^{t}x(s)ds = \sum_{k=-\infty}^{\infty}a_k\int_{-\infty}^{t}  e^{jkw_0s}ds
+    \end{equation*}
+    \begin{equation*}
+        \int_{-\infty}^{t}x(s)ds = \sum_{k=-\infty}^{\infty}a_k\frac{e^{jkw_0t}}{jkw_0}
+    \end{equation*}
+
+    Equality above proves that $\int_{-\infty}^{t}x(s)ds$ has spectral coefficients $a_k\frac{1}{jkw_0}$ where $w_0 = 2\pi/T$
+\item %write the solution of q2  
+	\begin{enumerate}
+    % Write your solutions in the following items.
+    \item %write the solution of q2a
+    $x(t)x(t) \longleftrightarrow \sum^{\infty}_{l=-\infty}a_l\cdot a_{k-l} = a_k * a_k$ (from multiplication property)
+    
+    \item %write the solution of q2b
+    $R\{a_k\}$
+    
+    \item %write the solution of q2c
+    $x(t+t_0) \longleftrightarrow e^{jk\omega_0t_0}a_k$, $x(t-t_0) \longleftrightarrow e^{-jk\omega_0t_0}a_k$ (from time-shift property) \\
+    $x(t+t_0) + x(t-t_0) \longleftrightarrow a_k(e^{jk\omega_0t_0} + e^{-jk\omega_0t_0})$ (from linearity property) \vspace{0.5cm}\\
+    \end{enumerate}
+
+\item %write the solution of q3
+    Let $q(t) = \frac{dx(t)}{dt}$ and $z(t) = \sum^\infty_{k=-\infty} \delta (t-4k)$, then \vspace{0.5cm}\\
+    \def\xmin{-3.5} % min x axis
+    \def\xmax{3.5}     % max x axis
+    \def\ymin{-2.5}    % min y axis
+    \def\ymax{2.5}     % max y axis
+    \def\A{2} % amplitude
+    \begin{tikzpicture}
+        \def\a{0.4*\xmax}
+        \tick{0,\A}{0} node[left=-1,scale=0.9] {2};
+        \tick{0,-\A}{0} node[left=-1,scale=0.9] {-2};
+        \tick{-3,0}{0} node[above=-1,scale=0.9] {-3};
+        \tick{-2,0}{0} node[above=-1,scale=0.9] {-2};
+        \tick{-1,0}{0} node[above=-12,scale=0.9] {-1};
+        \tick{0,0}{0} node[above=-12,scale=0.9] {0};
+        \tick{1,0}{0} node[above=-1,scale=0.9] {1};
+        \tick{2,0}{0} node[above=-1,scale=0.9] {2};
+        \tick{3,0}{0} node[above=-12,scale=0.9] {3};
+        \draw[->,thick] (0,\ymin) -- (0,\ymax) node[left] {$q(t)$};
+        \draw[->,thick] (-\xmax,0) -- (\xmax+0.1,0) node[below=1,right=1] {$x$};
+        \draw[xline,line cap=round] (-0.9*\xmax,0) -- (0.9*\xmax,0);
+        \draw[xline,->] (-3,0) --++ (0,-\A) node[mydarkblue,below right=1] {};
+        \draw[xline,->] (-2,0) --++ (0,-\A) node[mydarkblue,below right=1] {};
+        \draw[xline,->] (-1,0) --++ (0,\A) node[mydarkblue,below right=1] {};
+        \draw[xline,->] (0,0) --++ (0,\A) node[mydarkblue,below right=1] {};
+        \draw[xline,->] (1,0) --++ (0,-\A) node[mydarkblue,below right=1] {};
+        \draw[xline,->] (2,0) --++ (0,-\A) node[mydarkblue,below right=1] {};
+        \draw[xline,->] (3,0) --++ (0,\A) node[mydarkblue,below right=1] {};
+        \draw[xline,thick,fill=white] (0,0) circle(0.05);
+    \end{tikzpicture} \vspace{0.3cm}\\
+    $q(t) = z(t) + z(t+1) - z(t-1) - z(t-2)$ \vspace{0.2cm}\\
+    Fourier series of $z(t) \longleftrightarrow a_k = \frac{1}{4}\int^2_{-2}\delta(t)e^{-jk\omega_0t}dt = \frac{1}{4}$, then \vspace{0.2cm}\\
+    $q(t) \longleftrightarrow b_k = \frac{1}{4} + e^{jk\omega_0}\frac{1}{4} - e^{-jk\omega_0}\frac{1}{4} - e^{-2jk\omega_0}\frac{1}{4}$ \vspace{0.2cm}\\
+    $\omega_0 = \frac{2\pi}{T}$ and $T = 4 \longrightarrow b_k = \frac{1}{4}(1 + e^{jk\frac{\pi}{2}} - e^{-jk\frac{\pi}{2}} - e^{-jk\pi})$ \vspace{0.2cm}\\
+    $b_k = \frac{1}{4}(1 + cos(k\frac{\pi}{2}) + jsin(k\frac{\pi}{2}) - cos(k\frac{\pi}{2}) + jsin(k\frac{\pi}{2}) - cos(k\pi) + jsin(k\pi))$ \vspace{0.2cm}\\
+    $b_k = \frac{1}{4}(1-cos(k\pi) + 2jsin(k\frac{\pi}{2}))$ \vspace{0.2cm}\\
+    $x(t) \longleftrightarrow c_k = \frac{b_k}{jk\omega_0} = \frac{1-cos(k\pi) + 2jsin(k\frac{\pi}{2})}{2\pi jk}$ \vspace{0.5cm}\\
+\item %write the solution of q4
+    \begin{enumerate}   
+    % Write your solutions in the following items.
+    \item %write the solution of q4a
+        $x(t) = 1 + \frac{e^{j\omega_0t}-e^{-j\omega_0t}}{2j} + e^{j\omega_0t} + e^{-j\omega_0t} + \frac{j(2\omega_0t + \frac{\pi}{4})}{2}$ \vspace{0.2cm}\\
+        $x(t) = 1 + e^{j\omega_0t}(\frac{1}{2j}+1) + e^{-j\omega_0t}(\frac{-1}{2j}+1) + e^{2j\omega_0t}(\frac{e^{\frac{\pi}{4}}}{2}) + e^{-2j\omega_0t}(\frac{e^{\frac{\pi}{4}}}{2})$\vspace{0.2cm}\\
+        $a_0 = 1$\\
+        $a_1 = \frac{1}{2j}+1 = 1-\frac{j}{2}$\\
+        $a_{-1}=\frac{-1}{2j}+1 = 1 + \frac{j}{2}$\\
+        $a_2=\frac{e^{\frac{\pi}{4}}}{2}$\\
+        $a_{-2}=\frac{e^{\frac{\pi}{4}}}{2}$ \vspace{0.2cm}\\
+        Magnitudes:\\
+        \def\xmin{-2.5} % min x axis
+        \def\xmax{2.5}     % max x axis
+        \def\ymin{0.5}    % min y axis
+        \def\ymax{3.6}     % max y axis
+        \begin{tikzpicture}
+            \tick{0,2}{0} node[left=-1,scale=0.9] {1};
+            \tick{0,2.38}{0} node[left=-1,scale=0.9] {$\frac{e^{\frac{\pi}{4}}}{2}$};
+            \tick{0,2.94}{0} node[left=-1,scale=0.9] {$\frac{\sqrt{5}}{2}$};
+            \tick{-2,0}{0} node[above=-12,scale=0.9] {-2};
+            \tick{-1,0}{0} node[above=-12,scale=0.9] {-1};
+            \tick{0,0}{0} node[above=-12,scale=0.9] {0};
+            \tick{1,0}{0} node[above=-12,scale=0.9] {1};
+            \tick{2,0}{0} node[above=-12,scale=0.9] {2};
+            \draw[->,thick] (0,\ymin) -- (0,\ymax) node[left] {$|a_k|$};
+            \draw[-,thick] (-\xmax,0) -- (\xmax+0.1,0) node[below=1,right=1] {$k$};
+            \draw[xline,line cap=round] (-0.9*\xmax,0) -- (0.9*\xmax,0);
+            \draw[xline,-*] (-2,0) --++ (0,2.38) node[mydarkblue,below right=1] {};
+            \draw[xline,-*] (-1,0) --++ (0,2.94) node[mydarkblue,below right=1] {};
+            \draw[xline,-*] (0,0) --++ (0,2) node[mydarkblue,below right=1] {};
+            \draw[xline,-*] (1,0) --++ (0,2.94) node[mydarkblue,below right=1] {};
+            \draw[xline,-*] (2,0) --++ (0,2.38) node[mydarkblue,below right=1] {};
+            \draw[xline,thick,fill=white] (0,0) circle(0.05);
+        \end{tikzpicture} \vspace{0.3cm}\\
+        Phases:\\
+        \def\xmin{-2.5} % min x axis
+        \def\xmax{2.5}     % max x axis
+        \def\ymin{-2}    % min y axis
+        \def\ymax{2}     % max y axis
+        \begin{tikzpicture}
+            \tick{0,1.5}{0} node[left=-35,scale=0.9] {$63.43^{\circ}$};
+            \tick{0,-1.5}{0} node[left=-1,scale=0.9] {$-63.43^{\circ}$};
+            \tick{-2,0}{0} node[above=-1,scale=0.9] {-2};
+            \tick{-1,0}{0} node[above=-1,scale=0.9] {-1};
+            \tick{0,0}{0} node[above=-1,scale=0.9] {0};
+            \tick{1,0}{0} node[above=-1,scale=0.9] {1};
+            \tick{2,0}{0} node[above=-1,scale=0.9] {2};
+            \draw[->,thick] (0,\ymin) -- (0,\ymax) node[left] {$\angle{a_k}$};
+            \draw[-,thick] (-\xmax,0) -- (\xmax+0.1,0) node[below=1,right=1] {$k$};
+            \draw[xline,line cap=round] (-0.9*\xmax,0) -- (0.9*\xmax,0);
+            \draw[xline,-*] (-2,0) --++ (0,0) node[mydarkblue,below right=1] {};
+            \draw[xline,-*] (-1,0) --++ (0,1.5) node[mydarkblue,below right=1] {};
+            \draw[xline,-*] (0,0) --++ (0,0) node[mydarkblue,below right=1] {};
+            \draw[xline,-*] (1,0) --++ (0,-1.5) node[mydarkblue,below right=1] {};
+            \draw[xline,-*] (2,0) --++ (0,0) node[mydarkblue,below right=1] {};
+            \draw[xline,thick,fill=white] (0,0) circle(0.05);
+        \end{tikzpicture} \vspace{0.3cm}\\
+    \item %write the solution of q4b
+        \begin{equation*}
+            x(t) = e^{jwt}
+        \end{equation*}
+        \begin{equation*}
+            y(t) = H(jw)e^{jwt}
+        \end{equation*}
+
+        Subsitute $y(t)$ and $x(t)$ in the differential equation:
+        \begin{equation*}
+            H(jw)jwe^{jwt} + H(jw)e^{jwt} = e^{jwt}
+        \end{equation*}
+        \begin{equation*}
+            H(jw) = \frac{1}{1+jw}
+        \end{equation*}
+	\item %write the solution of q4c
+        \begin{equation*}
+            x(t) = e^{j0t} + \frac{1}{2j}e^{jw_0t} - \frac{1}{2j}e^{-jw_0t} + e^{jw_0t} + e^{-jw_0t} + \frac{1}{2}e^{\pi/4}e^{j2w_0t} + \frac{1}{2}e^{\pi/4}e^{-j2w_0t}
+        \end{equation*}
+        \begin{equation*}
+            y(t) = H(0)e^{j0t} + \frac{1}{2j}H(jw_0)e^{jw_0t} - \frac{1}{2j}H(-jw_0)e^{-jw_0t} + H(jw_0)e^{jw_0t} + H(-jw_0)e^{-jw_0t} + \frac{1}{2}H(j2w_0)e^{\pi/4}e^{j2w_0t} + \frac{1}{2}H(-j2w_0)e^{\pi/4}e^{-j2w_0t}
+        \end{equation*}
+        \begin{equation*}
+            b_0 = 1
+        \end{equation*}
+        \begin{equation*}
+            b_1 = H(jw_0)\left ( 1 + \frac{1}{2j} \right) 
+        \end{equation*}
+        \begin{equation*}
+            b_{-1} = H(-jw_0)\left ( 1 - \frac{1}{2j} \right) 
+        \end{equation*}
+        \begin{equation*}
+            b_2 = \frac{e^{\pi/4}}{2}H(j2w_0)
+        \end{equation*}
+        \begin{equation*}
+            b_{-2} = \frac{e^{\pi/4}}{2}H(-j2w_0)
+        \end{equation*}
+    \item %write the solution of q4d
+        \begin{equation*}
+            y(t) = \sum_{k=-2}^{2} b_k e^{jw_0kt}
+        \end{equation*}
+    \end{enumerate}
+
+\item %write the solution of q5
+    \begin{enumerate}
+    % Write your solutions in the following items.
+    \item %write the solution of q5a
+    Period of $x[n] = T_x = 4$ \vspace{0.2cm}\\
+    $x[n] \longleftrightarrow a_k = \frac{1}{4}\sum^4_{n=1}x[n]e^{-jk\frac{\pi}{2}n}$ \vspace{0.2cm}\\
+    \hspace*{1.9cm}$=\frac{1}{4}(e^{-jk\frac{\pi}{2}}-e^{-jk\frac{3\pi}{2}})$ \vspace{0.2cm}\\
+    \hspace*{1.9cm}$=\frac{1}{4}(cos(k\frac{\pi}{2})-jsin(k\frac{\pi}{2})-cos(k\frac{3\pi}{2})+jsin(\frac{3\pi}{2}))$\vspace{0.2cm}\\
+    
+    \item %write the solution of q5b
+    Period of $y[n] = T_y = 4$ \vspace{0.2cm}\\
+    $y[n] \longleftrightarrow b_k = \frac{1}{4}\sum^4_{n=1}y[n]e^{-jk\frac{\pi}{2}n}$ \vspace{0.2cm}\\
+    \hspace*{1.9cm}$=\frac{1}{4}(2e^{-jk2\pi}+e^{-jk\frac{\pi}{2}}+e^{-jk\frac{3\pi}{2}})$ \vspace{0.2cm}\\
+    \hspace*{1.9cm}$=\frac{1}{4}(2cos(k2\pi)-2jsin(k2\pi)+cos(k\frac{\pi}{2})-jsin(k\frac{\pi}{2})+cos(k\frac{3\pi}{2})-jsin(k\frac{3\pi}{2}))$ \vspace{0.2cm}\\
+    \hspace*{1.9cm}$=\frac{1}{4}(2+cos(k\frac{\pi}{2})-jsin(k\frac{\pi}{2})+cos(k\frac{3\pi}{2})-jsin(k\frac{3\pi}{2}))$, as $y[n]$ is a discrete function \vspace{0.2cm}\\
+    
+    \item %write the solution of q5c
+    Period of $x[n] \times y[n] = 4$\vspace{0.2cm} \\
+    $x[n] \times y[n] \longleftrightarrow c_k = \sum^4_{l=1}a_lb_{k-l} = \sum^4_{l=1}b_la_{k-l}$\vspace{0.2cm}\\
+    \hspace*{2.9cm}$=\frac{1}{2}a_{k-l}+\frac{1}{2}a_{k-3}+a{k-4}$\vspace{0.2cm}\\
+    \hspace*{2.9cm}$=\frac{1}{8}(sin(k\frac{\pi}{2})+jcos(k\frac{\pi}{2})+sin(k\frac{3\pi}{2})+jcos(k\frac{3\pi}{2})) + \frac{1}{8}(-sin(k\frac{\pi}{2})-jcos(k\frac{\pi}{2})-sin(k\frac{3\pi}{2})-\hspace*{9cm} jcos(k\frac{3\pi}{2})) + \frac{1}{4}(cos(k\frac{\pi}{2})-jsin(k\frac{\pi}{2})-cos(k\frac{3\pi}{2})+jsin(\frac{3\pi}{2}))$ \vspace{0.2cm}\\
+    \hspace*{2.9cm}$=\frac{1}{4}(cos(k\frac{\pi}{2})-jsin(k\frac{\pi}{2})-cos(k\frac{3\pi}{2})+jsin(\frac{3\pi}{2}))$ \vspace{0.2cm}\\
+    
+    \item %write the solution of q5d
+    $g[x] = x[n] \times y[n] = sin(\frac{\pi}{2}n) + sing(\frac{\pi}{2}n)cos(\frac{\pi}{2}n) = sin(\frac{\pi}{2}n)+\frac{1}{2}sin(\pi n) = sin(\frac{\pi}{2}n)$ and $T_g = 4$\vspace{0.2cm}\\
+    $g[n] \longleftrightarrow d_k = \frac{1}{4}\sum^4_{n=1}g[n]e^{-jk\frac{\pi}{2}n} = \frac{1}{4}(e^{-jk\frac{\pi}{2}}-e^{-jk\frac{3\pi}{2}})$\vspace{0.2cm}\\
+    \hspace*{3.1cm}$= \frac{1}{4}(cos(k\frac{\pi}{2})-jsin(k\frac{\pi}{2}) - cos(k\frac{3\pi}{2}) + jsin(k\frac{3\pi}{2}))$\vspace{0.2cm}\\
+    The Fourier coefficients found in part c are equal to the ones found in part d.\vspace{0.3cm}\\ 
+    \end{enumerate}    
+    
+\item %write the solution of q6
+    \begin{enumerate}
+    % Write your solutions in the following items.
+    \item %write the solution of q6a
+        \begin{equation*}
+            a_k = \frac{1}{4}\sum_{n=0}^{3}x[n]e^{-j\pi / 4kn}
+        \end{equation*}
+        \begin{equation*}
+            a_0 = \frac{1}{4} \cdot 4 = 1 
+        \end{equation*}
+        \begin{equation*}
+            a_1 = \frac{1}{4} \cdot (0 -j -2 + j) = \frac{-1}{2} 
+        \end{equation*}
+        \begin{equation*}
+            a_2 = \frac{1}{4} \cdot (0-1 +2 - 1) = 0
+        \end{equation*}
+        \begin{equation*}
+            a_3 = \frac{1}{4} \cdot (0 +j -2 - j) = \frac{-1}{2} 
+        \end{equation*}
+
+        \begin{figure}[!htbp]
+        \begin{center}
+        \begin{tikzpicture}
+            \begin{scope}[thick,font=\scriptsize]
+            
+            
+            \draw [->] (-4,0) -- (4,0) node [above left]  {$\Re\{z\}$};
+            \draw [->] (0,-4) -- (0,4) node [below right] {$\Im\{z\}$};
+        
+            
+            \foreach \n in {-3,...,-1,1,2,...,3}{%
+                \draw (\n,-3pt) -- (\n,3pt)   node [above] {$\n$};
+                \draw (-3pt,\n) -- (3pt,\n)   node [right] {$\n i$};}
+                
+            \draw [color=blue, fill=blue] (1,0) circle(0.05);
+            \node [color=black] at (1,-0.3) {$ a_0: 1$};
+
+            \draw [color=blue, fill=blue] (-0.5,0) circle(0.05);
+            \node [color=black] at (-0.75,-0.3) {$ a_1, a_3:-0.5$};
+
+            \draw [color=blue, fill=blue] (0,0) circle(0.05);
+            \node [color=black] at (0.2,0.3) {$ a_2:0$};
+
+            
+        \end{scope}
+        \end{tikzpicture}
+        \end{center}
+    \end{figure}
+        
+    \item %write the solution of q6b
+        \begin{equation*}
+            y[n] = x[n] - \sum_{k=-\infty}^{\infty} \delta [n - (3+4k)]
+        \end{equation*}
+
+        Let spectral coefficients of $\sum_{k=-\infty}^{\infty} \delta [n - (3+4k)]$ be $c_k$
+        \begin{equation*}
+            c_k = \frac{1}{4} \sum_{n=0}^{3}\delta[n-3]e^{-j\pi / 4kn}
+        \end{equation*}
+        \begin{equation*}
+            c_0 = 1/4
+        \end{equation*}
+        \begin{equation*}
+            c_1 = j/4
+        \end{equation*}
+        \begin{equation*}
+            c_2 = -1/4
+        \end{equation*}
+        \begin{equation*}
+            c_3 = -j/4
+        \end{equation*}
+
+        Then spectral coefficients of $y[n]$, $b_k$ equals to $a_k - c_k$.
+        \begin{equation*}
+            b_0 = 3/4
+        \end{equation*}
+        \begin{equation*}
+            b_1 = \frac{-1}{2} - j/4
+        \end{equation*}
+        \begin{equation*}
+            b_2 = 1/4
+        \end{equation*}
+        \begin{equation*}
+            b_3 = \frac{-1}{2} + j/4
+        \end{equation*}
+
+        \begin{figure}[!htbp]
+        \begin{center}
+        \begin{tikzpicture}
+            \begin{scope}[thick,font=\scriptsize]
+            
+            
+            \draw [->] (-4,0) -- (4,0) node [above left]  {$\Re\{z\}$};
+            \draw [->] (0,-4) -- (0,4) node [below right] {$\Im\{z\}$};
+        
+            
+            \foreach \n in {-3,...,-1,1,2,...,3}{%
+                \draw (\n,-5pt) -- (\n,5pt)   node [above] {$\n$};
+                \draw (-3pt,\n) -- (3pt,\n)   node [right] {$\n i$};}
+                
+            \draw [color=blue, fill=blue] (0.75,0) circle(0.05);
+            \node [color=black] at (0.75,-0.5) {$ 0.75$};
+
+            \draw [color=blue, fill=blue] (-0.5,-0.25) circle(0.05);
+            \node [color=black] at (-0.8,-0.6) {$  -0.5 - 0.25j$};
+
+            \draw [color=blue, fill=blue] (0.25,0) circle(0.05);
+            \node [color=black] at (0.25,-0.3) {$ 0.25$};
+
+            \draw [color=blue, fill=blue] (-0.5,0.25) circle(0.05);
+            \node [color=black] at (-0.5,0.7) {$ -0.5 + 0.25j$};
+
+            
+        \end{scope}
+        \end{tikzpicture}
+        \end{center}
+    \end{figure}
+    
+    \end{enumerate}
+    
+\item %write the solution of q7
+    \begin{enumerate}
+    % Write your solutions in the following items.
+    \item %write the solution of q7a
+        \begin{equation*}
+            x(t) = \sum_{k=-\infty}^{\infty} a_k e^{jkw_0t}
+        \end{equation*}
+        \begin{equation*}
+            y(t) = \sum_{k=-\infty}^{\infty} a_k H(jkw_0) e^{jkw_0t}
+        \end{equation*}
+
+        Since $w_0 = 2\pi / (\pi / K) = 2K$, coefficient $a_k$ where the value of $|k\cdot2K|$ is greater than $80$, is zero.
+    \item %write the solution of q7b
+        If $y(t) \neq x(t)$, then there must be at least one value of $a_k$, where $|k\cdot2K|$ is greater than $80$ and non-zero.
+    \end{enumerate}    
+	
+\item %write the solution of q8	
+
+\end{enumerate}
+
+
+\end{document}
+

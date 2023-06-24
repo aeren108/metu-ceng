@@ -1,0 +1,56 @@
+ISim log file
+Running: /home/aeren/Okul/CENG232/Lab3/lab3_part2/testbench_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/aeren/Okul/CENG232/Lab3/lab3_part2/testbench_isim_beh.wdb 
+ISim P.20131013 (signature 0xfbc00daa)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Hello World
+Finished circuit initialization process.
+Succesful on case 1
+Succesful on case 2
+Succesful on case 3
+Succesful on case 4
+Succesful on case 5
+Succesful on case 6
+Succesful on case 7
+Succesful on case 8
+Succesful on case 9
+Succesful on case 10
+Succesful on case 11
+Succesful on case 12
+Succesful on case 13
+Succesful on case 14
+Succesful on case 15
+Succesful on case 16
+Succesful on case 17
+Succesful on case 18
+Succesful on case 19
+Succesful on case 20
+Succesful on case 21
+Succesful on case 22
+Succesful on case 23
+Succesful on case 24
+Succesful on case 25
+Succesful on case 26
+Succesful on case 27
+Succesful on case 28
+Succesful on case 29
+Succesful on case 30
+Succesful on case 31
+Succesful on case 32
+Succesful on case 33
+Succesful on case 34
+Succesful on case 35
+Succesful on case 36
+Succesful on case 37
+Succesful on case 38
+Succesful on case 39
+Succesful on case 40
+Stopped at time : 233 ns : File "/home/aeren/Downloads/lab3_part2_testbench.v" Line 2327
+# exit 0

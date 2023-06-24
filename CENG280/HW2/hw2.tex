@@ -1,0 +1,131 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\begin{document}
+
+\section*{Student Information } 
+%Write your full name and id number between the colon and newline
+%Put one empty space character after colon and before newline
+Full Name :  Ahmet Eren {\c C}olak \\
+Id Number :  2587921
+
+\section*{Q1}
+\subsection*{a.}
+$L_1 = (V_1, \Sigma_1, R_1, S_1)$,
+	\begin{equation*}
+		V_1 = \{a,b, S_1\}
+	\end{equation*}
+	\begin{equation*}
+		\Sigma_1 = \{a,b\}
+	\end{equation*}
+	\begin{equation*}
+		R_1 = \{(S_1, aS_1bS_1b), (S_1, bS_1aS_1b), (S_1, bS_1bS_1a), (S_1, S_1S_1), (S_1, e)\}
+	\end{equation*}
+\subsection*{b.}
+$L_2 = (V_2, \Sigma_2, R_2, S_2)$,
+	\begin{equation*}
+		V_2 = \{a,b, S_2\}
+	\end{equation*}
+	\begin{equation*}
+		\Sigma_2 = \{a,b\}
+	\end{equation*}
+	\begin{equation*}
+		R_2 = \{(S_2, aS_2bA), (S_2, e), (A, b), (A, e)\}
+	\end{equation*}
+\subsection*{c.}
+$M = (K, \Sigma, \Gamma, \Delta, p, F)$,
+	\begin{equation*}
+		K = \{q, p\}
+	\end{equation*}
+	\begin{equation*}
+		\Sigma = \{a, b\}
+	\end{equation*}
+	\begin{equation*}
+		\Gamma = \{a, b, S\}
+	\end{equation*}
+	\begin{equation*}
+		F = \{q\} 
+	\end{equation*}
+	\begin{equation*}
+		\begin{split}
+			\Delta = \{((p,e,e), (q, S)), ((q,e,S), (q, aSbSb)), ((q,e,S), (q, bSaSb)),\\ ((q,e,S), (q, bSbSa)), ((q,e,S), (q, SS)), ((q,e,S), (q, e)),\\ ((q,a,a), (q,e)), ((q,b,b), (q,e))\}
+		\end{split}
+	\end{equation*}
+\subsection*{d.}
+$L_3 = (V, \Sigma, R, S)$,
+	\begin{equation*}
+		V = V_1 \cup V_2 \cup S = \{a,b,S_1,S_2,S\}
+	\end{equation*}
+	\begin{equation*}
+		\Sigma = \Sigma_1 \cup \Sigma_2 = \{a,b\}
+	\end{equation*}
+	\begin{equation*}
+		\begin{split}
+			R = R_1 \cup R_2 \cup \{(S, S_1), (S, S_2)\} = \{(S_1, aS_1bS_1b), (S_1, bS_1aS_1b), (S_1, bS_1bS_1a), \\ (S_1, S_1S_1), (S_1, e), (S_2, aS_2bA), (S_2, e), (A, b), (A, e), (S, S_1), (S, S_2)\}
+		\end{split}
+	\end{equation*}
+
+\section*{Q2}
+\subsection*{a.}
+Since there are two leftmost derivations for string $00111$, $G_1$ is ambiguous.
+\begin{equation*}
+	S \Rightarrow AS \Rightarrow 0A1S \Rightarrow 0A11S \Rightarrow 00111S \Rightarrow 00111
+\end{equation*}
+\begin{equation*}
+	S \Rightarrow AS \Rightarrow A1S \Rightarrow 0A11S \Rightarrow 00111S \Rightarrow 00111
+\end{equation*}
+\subsection*{b.}
+	\begin{equation*}
+		V = \{0,1,S,A,B\}
+	\end{equation*}
+	\begin{equation*}
+		\Sigma = \{0,1\}
+	\end{equation*}
+	\begin{equation*}
+		R = \{(S, AS), (S, e), (A, 0AB1), (A, 01), (B,B1), (B, e)\}
+	\end{equation*}
+\subsection*{c.}
+	\begin{equation*}
+		S \Rightarrow AS \Rightarrow 0AB1S \Rightarrow 001B1S \Rightarrow 001B11S \Rightarrow 00111S \Rightarrow 00111
+	\end{equation*}
+	\newline
+	\begin{center}
+		\begin{tikzpicture}
+		  \node (s0) at (0,0) {S};
+		  \node (a0) at (-1,-1) {A};
+		  \node (s1) at (1,-1) {S};
+		  \node (v0) at (-2.5,-2) {0};
+		  \node (a1) at (-1.5,-2) {A};
+		  \node (b0) at (-0.5,-2) {$B$};
+		  \node (v1) at (0.5,-2) {1};
+		  \node (v01) at (-2,-3) {0};
+		  \node (v11) at (-1,-3) {1};
+		  \node (b1) at (-0.5,-4) {$B$};
+		  \node (v12) at (0.5,-4) {1};
+		  \node (e0) at (-0.5,-5) {e};
+		  \node (e1) at (2,-2) {e};
+		  \draw (s0) edge (a0);
+		  \draw (a0) edge (v0);
+		  \draw (a0) edge (a1);
+		  \draw (a0) edge (b0);
+		  \draw (a0) edge (v1);
+		  \draw (a1) edge (v01);
+		  \draw (a1) edge (v11);
+		  \draw (b0) edge (b1);
+		  \draw (b0) edge (v12);
+		  \draw (b1) edge (e0);
+		  \draw (s0) edge (s1);
+		  \draw (s1) edge (e1);
+		\end{tikzpicture}
+	\end{center}
+	
+\end{document}

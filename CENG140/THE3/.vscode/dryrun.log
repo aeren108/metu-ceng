@@ -1,0 +1,6 @@
+make debug --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/aeren/Okul/CENG140/THE3'
+rm -f the3
+gcc -Wall -pedantic-errors -ansi -g the3.c -o the3
+make: Leaving directory '/home/aeren/Okul/CENG140/THE3'
+ 

@@ -1,0 +1,30 @@
+name: binary increment
+source code: |-
+  input: '001'
+  blank: ' '
+  start state: zero
+  table:
+    # scan to the rightmost digit
+    zero:
+      0: {write: ' ', R: end}
+      1: {R: reject}
+      ' ': {R: accept}
+    one:
+      1: {write: ' ', L: start}
+      [0, ' ']: {R: reject}
+    end:
+      [1, 0]: R
+      ' ': {L: one}
+    start:
+      [1, 0]: L
+      ' ': {R: zero}
+      
+    accept:
+    reject:
+positions:
+  zero: {x: 483.34, y: 311.77}
+  one: {x: 302.12, y: 310.96}
+  end: {x: 302.27, y: 113.7}
+  start: {x: 481.28, y: 114.87}
+  accept: {x: 484.07, y: 453.49}
+  reject: {x: 301.65, y: 450.74}

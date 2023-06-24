@@ -1,0 +1,120 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[dvips]{graphicx}
+\usepackage{fancybox}
+\usepackage{verbatim}
+\usepackage{array}
+\usepackage{latexsym}
+\usepackage{alltt}
+\usepackage{hyperref}
+\usepackage{textcomp}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage[hmargin=3cm,vmargin=5.0cm]{geometry}
+%\topmargin=0cm
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+%\setlength{\leftmargin}{-5cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+
+
+\begin{document}
+
+\section*{Student Information } 
+%Write your full name and id number between the colon and newline
+%Put one empty space character after colon and before newline
+Full Name :  Ahmet Eren Çolak \newline
+Id Number :  2587921
+
+
+\section*{Q1}
+Assume that there are positive integers smaller than $1$ and let $n$ be the least of them. It can expressed as:
+	\begin{equation*}
+		0 < n < 1
+	\end{equation*}
+Multiply both sides of the inequality $n < 1$ by $n$:
+	\begin{equation*}
+		n^2 < n
+	\end{equation*} 
+Since $n$ is a positive integer, it is known that $n^2$ is also a positive integer. This contradicts with our assumption that $n$ is the least positive integer between $0$ and $1$. Thus, there is no positive integer less than $1$.
+
+\section*{Q2}
+Base case: $S(1,1)=\frac{(1+1-1)!}{1!0!}=1$ and $x_1=1$ is the only solution. Therefore $S(1,1)$ is true. \newline
+Induction step for $m$:
+Assume $S(m,n)$ is true, then $S(m+1, n)$ should be true.
+\begin{equation*}
+	x_1+x_2+\dots+x_m+x_{m+1} = n
+\end{equation*}
+\begin{align*}
+	&\text{For $x_{m+1}=0$, number of possibilities are $S(m,n)$} \\
+	&\text{For $x_{m+1}=1$, number of possibilities are $S(m,n-1)$} \\
+	&\vdots \\
+	&\text{For $x_{m+1}=n-1$, number of possibilities are $S(m,1)$} \\
+	&\text{For $x_{m+1}=n$, number of possibilities are $1$}
+\end{align*}
+
+So, $S(m+1,n)$ can be represented as:
+\begin{equation*}
+	S(m+1,n)=S(m,n)+S(m,n-1)+S(m,n-2)+\dots+S(m,1)+1
+\end{equation*}
+
+\section*{Q3}
+\paragraph{\textbf{a.}}
+A unit square contains $4$ congruent triangles. There are $21$ unit squares in total. From squares, there are $21 \cdot 4 = 84$ congruent triangles.
+Apart from unit squares, dots in the figure that are on the hypotenuse, do not form a square. From the dots on hypotenuse, there are $7$ congruent triangles.
+In total there are $84 + 7 = 91$ triangles.
+\paragraph{\textbf{b.}}
+Amount of onto functions can be found by subtracting non onto functions from all functions. There are $4^6$ functions in all possible ways. To find amount of non onto functions, a recursive function can be defined such that $F_n$ denotes the amount of onto functions from $6$ elements to $n$ elements.
+
+There must be at least one element in the codomain of a function which is not image of any element of domain, so that function is not onto. If an element is eliminated from codomain, number of onto functions will be ${n \choose 1} F_{n-1}$. If each elimination considered a recursive function is obtained:
+\begin{equation*}
+	F_n = n^6 - {n \choose 1}F_{n-1} - {n \choose 2}F_{n-2} - \dots - {n \choose n-1}F_1
+\end{equation*}
+
+It is obvious that $F_1=1$. Then $F_4$ can be calculated:
+\begin{align*}
+	F_2 &= 2^6 - {2 \choose 1}\cdot 1 = 62 \\
+	F_3 &= 3^6 - {3 \choose 1}\cdot 62 - {3 \choose 2}\cdot 1 = 540 \\
+	F_4 &= 4^6 - {4 \choose 1}\cdot 540 - {4 \choose 2}\cdot 62 - {4 \choose 3}\cdot 1 = 1560
+\end{align*}
+
+\section*{Q4}
+\paragraph{\textbf{a.}}
+Let $a_n$ denote the number of possible strings. Then there are two disjoint possibilities for $a_{n}$:\newline
+1) Valid string with $n-1$ length + any number (0, 1, 2) \newline
+2) Invalid string with $n-1$ length + last digit of invalid string
+
+For $n > 1$, $a_n = 3a_{n-1}+3^{n-1}-a_{n-1}=2a_{n-1}+3^{n-1}$
+\paragraph{\textbf{b.}}
+\begin{align*}
+	a_1 &= 0 \\
+\end{align*}
+\paragraph{\textbf{c.}}
+Homogeneous solution:
+\begin{equation*}
+	a_n^{(h)} = 2a_{n-1}=2^n
+\end{equation*}
+Particular solution:
+\begin{equation*}
+	a_n^{(p)} = 2a_{n-1}+3^{n-1}
+\end{equation*}
+Solution must be in form of $A\cdot3^n$.
+\begin{align*}
+	A\cdot3^n&=2A\cdot3^{n-1}+3^{n-1}\\
+	A\cdot3^{n-1}&=3^{n-1} \\
+	A&=1 \\
+\end{align*}
+General solution: $a_n=c\cdot2^n+3^n$, for $n=1, a_1=0$
+\begin{align*}
+	c\cdot2^1+3^1&=0\\
+	2c+3&=0 \\
+	c&=-3/2 \\
+	a_n&=-3\cdot2^{n-1}+3^n
+\end{align*}
+\end{document}
+

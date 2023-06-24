@@ -1,0 +1,9 @@
+{
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "/home/aeren/Okul/CENG140/THE3",
+            "binaryPath": "/home/aeren/Okul/CENG140/THE3/the3",
+            "binaryArgs": []
+        }
+    ]
+}

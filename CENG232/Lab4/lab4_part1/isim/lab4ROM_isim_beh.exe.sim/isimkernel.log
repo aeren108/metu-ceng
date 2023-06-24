@@ -1,0 +1,29 @@
+Command line:
+   lab4ROM_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  41373
+
+Mon May 30 01:41:58 2022
+
+
+ Elaboration Time: 0.02 sec
+
+ Current Memory Usage: 193.597 Meg
+
+ Total Signals          : 14
+ Total Nets             : 22
+ Total Signal Drivers   : 6
+ Total Blocks           : 2
+ Total Primitive Blocks : 2
+ Total Processes        : 9
+ Total Traceable Variables  : 20
+ Total Scalar Nets and Variables : 187
+Total Line Count : 33
+
+ Total Simulation Time: 0.03 sec
+
+ Current Memory Usage: 269.099 Meg
+
+Mon May 30 01:42:11 2022
+

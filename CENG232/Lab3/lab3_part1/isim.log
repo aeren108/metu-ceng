@@ -1,0 +1,116 @@
+ISim log file
+Running: /home/aeren/Okul/CENG232/Lab3/lab3_part1/testbench_ic1337_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/aeren/Okul/CENG232/Lab3/lab3_part1/testbench_ic1337_isim_beh.wdb 
+ISim P.20131013 (signature 0xfbc00daa)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+testcase #1: correct
+testcase #2: correct
+testcase #3: correct
+testcase #4: correct
+testcase #5: correct
+testcase #6: correct
+testcase #7: correct
+testcase #8: correct
+testcase #9: correct
+testcase #10: correct
+testcase #11: correct
+testcase #12: correct
+testcase #13: correct
+testcase #14: correct
+testcase #15: correct
+testcase #16: correct
+testcase #17: correct
+testcase #18: correct
+testcase #19: correct
+testcase #20: correct
+testcase #21: correct
+testcase #22: correct
+testcase #23: correct
+testcase #24: correct
+testcase #25: correct
+testcase #26: correct
+testcase #27: correct
+testcase #28: correct
+testcase #29: correct
+testcase #30: correct
+testcase #31: correct
+testcase #32: correct
+testcase #33: correct
+testcase #34: correct
+testcase #35: correct
+testcase #36: correct
+testcase #37: correct
+testcase #38: correct
+testcase #39: correct
+testcase #40: correct
+testcase #41: correct
+testcase #42: correct
+testcase #43: correct
+testcase #44: correct
+testcase #45: correct
+testcase #46: correct
+testcase #47: correct
+testcase #48: correct
+testcase #49: correct
+testcase #50: correct
+testcase #51: correct
+testcase #52: correct
+testcase #53: correct
+testcase #54: correct
+testcase #55: correct
+testcase #56: correct
+testcase #57: correct
+testcase #58: correct
+testcase #59: correct
+testcase #60: correct
+testcase #61: correct
+testcase #62: correct
+testcase #63: correct
+testcase #64: correct
+testcase #65: correct
+testcase #66: correct
+testcase #67: correct
+testcase #68: correct
+testcase #69: correct
+testcase #70: correct
+testcase #71: correct
+testcase #72: correct
+testcase #73: correct
+testcase #74: correct
+testcase #75: correct
+testcase #76: correct
+testcase #77: correct
+testcase #78: correct
+testcase #79: correct
+testcase #80: correct
+testcase #81: correct
+testcase #82: correct
+testcase #83: correct
+testcase #84: correct
+testcase #85: correct
+testcase #86: correct
+testcase #87: correct
+testcase #88: correct
+testcase #89: correct
+testcase #90: correct
+testcase #91: correct
+testcase #92: correct
+testcase #93: correct
+testcase #94: correct
+testcase #95: correct
+testcase #96: correct
+testcase #97: correct
+testcase #98: correct
+testcase #99: correct
+testcase #100: correct
+Out of 100 testcases        100 were correct.
+# run 10.00us
+# exit 0

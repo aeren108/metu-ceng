@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "/home/aeren/Okul/CENG232/Lab3/lab3_part1/ic1337.xst" -ofn "/home/aeren/Okul/CENG232/Lab3/lab3_part1/ic1337.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s250e-cp132-5 ic1337.ngc ic1337.ngd  

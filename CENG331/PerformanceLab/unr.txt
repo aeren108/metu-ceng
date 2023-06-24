@@ -1,0 +1,400 @@
+src += limit;
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+
+src += limit;
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+
+src += limit;
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+
+src += limit;
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+
+src += limit;
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+
+src += limit;
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+
+src += limit;
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+
+src += limit;
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+temp += src->red * tker->red;
+temp += src->green * tker->green;
+temp += src->blue * tker->blue;
+src++;
+tker++;
+
+

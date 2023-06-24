@@ -1,0 +1,36 @@
+name: binary increment
+source code: |-
+  input: '1011'
+  blank: ' '
+  start state: zero
+  table:
+    zero:
+      [1,0]: R
+      ' ': {L: copy}
+    copy:
+      1: {write: ' ', R: write_one}
+      0: {write: ' ', R: write_zero}
+      ' ': {R: done}
+    write_one:
+      [1, 0]: R
+      ' ': {write: 1, L: back_one}
+    back_one:
+      [1,0]: L
+      ' ': {write: 1, L: copy}
+    
+    write_zero:
+      [1, 0]: R
+      ' ': {write: 0, L: back_zero}
+    back_zero:
+      [1,0]: L
+      ' ': {write: 0, L: copy}
+    done:
+    
+positions:
+  zero: {x: 483.34, y: 311.77}
+  copy: {x: 361.89, y: 238.2, fixed: false}
+  write_one: {x: 291.03, y: 113.33, fixed: false}
+  back_one: {x: 432.07, y: 109.63, fixed: false}
+  write_zero: {x: 351.22, y: 383.87, fixed: false}
+  back_zero: {x: 234.42, y: 303.4, fixed: false}
+  done: {x: 505.93, y: 211.38, fixed: false}

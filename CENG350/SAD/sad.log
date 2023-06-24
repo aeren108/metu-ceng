@@ -1,0 +1,567 @@
+This is LuaHBTeX, Version 1.16.0 (TeX Live 2023/Arch Linux)  (format=lualatex 2023.4.11)  31 MAY 2023 21:51
+ restricted system commands enabled.
+**sad.tex
+(./sad.tex
+LaTeX2e <2022-11-01> patch level 1
+Lua module: luaotfload 2022-10-03 3.23 Lua based OpenType font support
+Lua module: lualibs 2022-10-04 2.75 ConTeXt Lua standard libraries.
+Lua module: lualibs-extended 2022-10-04 2.75 ConTeXt Lua libraries -- extended c
+ollection.
+luaotfload | conf : Root cache directory is "/home/aeren/.texlive/texmf-var/luat
+ex-cache/generic/names".
+luaotfload | init : Loading fontloader "fontloader-2022-10-03.lua" from kpse-res
+olved path "/usr/share/texmf-dist/tex/luatex/luaotfload/fontloader-2022-10-03.lu
+a".
+Lua-only attribute luaotfload@noligature = 1
+luaotfload | init : Context OpenType loader version 3.120
+Inserting `luaotfload.node_processor' in `pre_linebreak_filter'.
+Inserting `luaotfload.node_processor' in `hpack_filter'.
+Inserting `luaotfload.glyph_stream' in `glyph_stream_provider'.
+Inserting `luaotfload.define_font' in `define_font'.
+Lua-only attribute luaotfload_color_attribute = 2
+luaotfload | conf : Root cache directory is "/home/aeren/.texlive/texmf-var/luat
+ex-cache/generic/names".
+Inserting `luaotfload.harf.strip_prefix' in `find_opentype_file'.
+Inserting `luaotfload.harf.strip_prefix' in `find_truetype_file'.
+Removing  `luaotfload.glyph_stream' from `glyph_stream_provider'.
+Inserting `luaotfload.harf.glyphstream' in `glyph_stream_provider'.
+Inserting `luaotfload.harf.finalize_vlist' in `post_linebreak_filter'.
+Inserting `luaotfload.harf.finalize_hlist' in `hpack_filter'.
+Inserting `luaotfload.cleanup_files' in `wrapup_run'.
+Inserting `luaotfload.harf.finalize_unicode' in `finish_pdffile'.
+Inserting `luaotfload.glyphinfo' in `glyph_info'.
+Lua-only attribute luaotfload.letterspace_done = 3
+Inserting `luaotfload.aux.set_sscale_dimens' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_font_index' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.patch_cambria_domh' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.fixup_fontdata' in `luaotfload.patch_font_unsafe'.
+Inserting `luaotfload.aux.set_capheight' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_xheight' in `luaotfload.patch_font'.
+Inserting `luaotfload.rewrite_fontname' in `luaotfload.patch_font'. L3 programm
+ing layer <2023-02-22>
+Inserting `tracingstacklevels' in `input_level_string'.
+(/usr/share/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2022/07/02 v1.4n Standard LaTeX document class
+(/usr/share/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
+luaotfload | db : Font names database loaded from /home/aeren/.texlive/texmf-var
+/luatex-cache/generic/names/luaotfload-names.luc.gz)
+\c@part=\count183
+\c@chapter=\count184
+\c@section=\count185
+\c@subsection=\count186
+\c@subsubsection=\count187
+\c@paragraph=\count188
+\c@subparagraph=\count189
+\c@figure=\count190
+\c@table=\count191
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen139
+)
+(/usr/share/texmf-dist/tex/latex/tools/indentfirst.sty
+Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
+)
+(/usr/share/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+(/usr/share/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(/usr/share/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+\Gm@cnth=\count192
+\Gm@cntv=\count193
+\c@Gm@tempcnt=\count194
+\Gm@bindingoffset=\dimen140
+\Gm@wd@mp=\dimen141
+\Gm@odd@mp=\dimen142
+\Gm@even@mp=\dimen143
+\Gm@layoutwidth=\dimen144
+\Gm@layoutheight=\dimen145
+\Gm@layouthoffset=\dimen146
+\Gm@layoutvoffset=\dimen147
+\Gm@dimlist=\toks17
+)
+(/usr/share/texmf-dist/tex/latex/base/flafter.sty
+Package: flafter 2021/07/31 v1.4e Standard LaTeX floats after reference (FMi)
+Applying: [2015/01/01] float order in 2-column on input line 49.
+Already applied: [0000/00/00] float order in 2-column on input line 151.
+)
+(/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(/usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: luatex.def on input line 107.
+
+(/usr/share/texmf-dist/tex/latex/graphics-def/luatex.def
+File: luatex.def 2022/09/22 v1.2d Graphics/color driver for luatex
+))
+\Gin@req@height=\dimen148
+\Gin@req@width=\dimen149
+)
+(/usr/share/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count195
+\float@exts=\toks18
+\float@box=\box51
+\@float@everytoks=\toks19
+\@floatcapt=\box52
+)
+(/usr/share/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2021/07/05 v2.14 Sectioning titles
+\ttl@box=\box53
+\beforetitleunit=\skip50
+\aftertitleunit=\skip51
+\ttl@plus=\dimen150
+\ttl@minus=\dimen151
+\ttl@toksa=\toks20
+\titlewidth=\dimen152
+\titlewidthlast=\dimen153
+\titlewidthfirst=\dimen154
+)
+(/usr/share/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
+
+(/usr/share/texmf-dist/tex/latex/tools/array.sty
+Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen155
+\ar@mcellbox=\box54
+\extrarowheight=\dimen156
+\NC@list=\toks21
+\extratabsurround=\skip52
+\backup@length=\skip53
+\ar@cellbox=\box55
+)
+\TX@col@width=\dimen157
+\TX@old@table=\dimen158
+\TX@old@col=\dimen159
+\TX@target=\dimen160
+\TX@delta=\dimen161
+\TX@cols=\count196
+\TX@ftn=\toks22
+)
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: 
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(85.35826pt, 443.57848pt, 85.35826pt)
+* v-part:(T,H,B)=(42.67912pt, 709.61174pt, 42.67912pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=443.57848pt
+* \textheight=709.61174pt
+* \oddsidemargin=13.08827pt
+* \evensidemargin=13.08827pt
+* \topmargin=-66.59087pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+(/usr/share/texmf-dist/tex/latex/l3backend/l3backend-luatex.def
+File: l3backend-luatex.def 2023-01-16 L3 backend support: PDF output (LuaTeX)
+\l__color_backend_stack_int=\count197
+\l__pdf_internal_box=\box56
+) (./sad.aux)
+\openout1 = sad.aux
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 27.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 2
+7.
+
+(/usr/share/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: luatex
+*geometry* verbose mode - [ preamble ] result:
+* driver: luatex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(85.35826pt, 443.57848pt, 85.35826pt)
+* v-part:(T,H,B)=(42.67912pt, 709.61174pt, 42.67912pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=443.57848pt
+* \textheight=709.61174pt
+* \oddsidemargin=13.08827pt
+* \evensidemargin=13.08827pt
+* \topmargin=-66.59087pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count198
+\scratchdimen=\dimen162
+\scratchbox=\box57
+\nofMPsegments=\count199
+\nofMParguments=\count266
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count267
+\MPscratchDim=\dimen163
+\MPnumerator=\count268
+\makeMPintoPDFobject=\count269
+\everyMPtoPDFconversion=\toks24
+) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Overfull \hbox (18.0pt too wide) in paragraph at lines 31--33
+[][]
+ []
+
+
+Overfull \hbox (18.0pt too wide) in paragraph at lines 36--37
+[][] 
+ []
+
+
+Overfull \hbox (18.0pt too wide) in paragraph at lines 43--44
+[][] 
+ []
+
+[1
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./sad.toc [1
+
+])
+\tf@toc=\write3
+
+\openout3 = sad.toc
+ [2]
+(./sad.lof)
+\tf@lof=\write4
+
+\openout4 = sad.lof
+ [3
+
+] (./sad.lot)
+\tf@lot=\write5
+
+\openout5 = sad.lot
+ [4
+
+]
+Chapter 1.
+
+Underfull \hbox (badness 10000) in paragraph at lines 70--77
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 78--83
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--90
+
+ []
+
+[5
+
+] [6]
+Chapter 2.
+
+Overfull \hbox (0.52316pt too wide) in paragraph at lines 131--132
+[]\TU/lmr/m/n/12 Al-pay-lan. (n.d.). GitHub - al-pay-lan/afet-bilgi.com. GitHub.
+ https://github.com/al-
+ []
+
+[7
+
+]
+Chapter 3.
+[8
+
+]
+Chapter 4.
+<context-diagram.jpg, id=32, 712.6625pt x 580.1675pt>
+File: context-diagram.jpg Graphic file (type jpg)
+<use context-diagram.jpg>
+Package luatex.def Info: context-diagram.jpg  used on input line 149.
+(luatex.def)             Requested size: 356.33038pt x 290.08302pt.
+[9
+
+<./context-diagram.jpg>]
+<ext1.jpg, id=36, 652.4375pt x 467.7475pt>
+File: ext1.jpg Graphic file (type jpg)
+<use ext1.jpg>
+Package luatex.def Info: ext1.jpg  used on input line 195.
+(luatex.def)             Requested size: 326.21794pt x 233.87317pt.
+ [10] [11<./ext1.jpg>]
+<act1.jpg, id=44, 1255.69125pt x 726.715pt>
+File: act1.jpg Graphic file (type jpg)
+<use act1.jpg>
+Package luatex.def Info: act1.jpg  used on input line 225.
+(luatex.def)             Requested size: 502.26761pt x 290.68085pt.
+
+Overfull \hbox (58.68913pt too wide) in paragraph at lines 225--227
+ [][] 
+ []
+
+<act2.jpg, id=45, 1160.335pt x 607.26875pt>
+File: act2.jpg Graphic file (type jpg)
+<use act2.jpg>
+Package luatex.def Info: act2.jpg  used on input line 231.
+(luatex.def)             Requested size: 464.12578pt x 242.9032pt.
+
+Overfull \hbox (20.5473pt too wide) in paragraph at lines 231--233
+ [][] 
+ []
+
+[12<./act1.jpg>]
+<component1.jpg, id=49, 1312.905pt x 638.385pt>
+File: component1.jpg Graphic file (type jpg)
+<use component1.jpg>
+Package luatex.def Info: component1.jpg  used on input line 247.
+(luatex.def)             Requested size: 525.15271pt x 255.34947pt.
+
+Overfull \hbox (81.57423pt too wide) in paragraph at lines 247--249
+ [][] 
+ []
+
+[13<./act2.jpg>]
+<internal1.jpg, id=53, 788.9475pt x 531.9875pt>
+File: internal1.jpg Graphic file (type jpg)
+<use internal1.jpg>
+Package luatex.def Info: internal1.jpg  used on input line 267.
+(luatex.def)             Requested size: 394.47278pt x 265.9931pt.
+ [14<./component1.jpg>]
+<seq1.jpg, id=57, 901.3675pt x 443.6575pt>
+File: seq1.jpg Graphic file (type jpg)
+<use seq1.jpg>
+Package luatex.def Info: seq1.jpg  used on input line 275.
+(luatex.def)             Requested size: 540.82466pt x 266.19655pt.
+
+Overfull \hbox (97.24619pt too wide) in paragraph at lines 275--277
+ [][] 
+ []
+
+<seq2.jpg, id=58, 636.3775pt x 411.5375pt>
+File: seq2.jpg Graphic file (type jpg)
+<use seq2.jpg>
+Package luatex.def Info: seq2.jpg  used on input line 282.
+(luatex.def)             Requested size: 381.82944pt x 246.92441pt.
+[15<./internal1.jpg><./seq1.jpg>]
+<seq3.jpg, id=62, 700.6175pt x 427.5975pt>
+File: seq3.jpg Graphic file (type jpg)
+<use seq3.jpg>
+Package luatex.def Info: seq3.jpg  used on input line 288.
+(luatex.def)             Requested size: 420.37373pt x 256.56047pt.
+ [16<./seq2.jpg><./seq3.jpg>]
+<db1.jpg, id=66, 548.0475pt x 483.8075pt>
+File: db1.jpg Graphic file (type jpg)
+<use db1.jpg>
+Package luatex.def Info: db1.jpg  used on input line 303.
+(luatex.def)             Requested size: 328.83104pt x 290.28674pt.
+ [17<./db1.jpg>]
+<deploy1.jpg, id=70, 989.6975pt x 716.6775pt>
+File: deploy1.jpg Graphic file (type jpg)
+<use deploy1.jpg>
+Package luatex.def Info: deploy1.jpg  used on input line 338.
+(luatex.def)             Requested size: 494.84753pt x 358.33788pt.
+
+Overfull \hbox (51.26906pt too wide) in paragraph at lines 338--340
+ [][] 
+ []
+
+[18]
+Underfull \hbox (badness 10000) in paragraph at lines 356--358
+
+ []
+
+[19<./deploy1.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 359--361
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 362--364
+
+ []
+
+[20]
+Chapter 5.
+<context2.jpg, id=81, 992.70876pt x 546.04pt>
+File: context2.jpg Graphic file (type jpg)
+<use context2.jpg>
+Package luatex.def Info: context2.jpg  used on input line 381.
+(luatex.def)             Requested size: 496.35316pt x 273.01933pt.
+
+Overfull \hbox (52.77469pt too wide) in paragraph at lines 381--383
+ [][] 
+ []
+
+[21
+
+] [22<./context2.jpg>]
+<ext2.jpg, id=88, 612.2875pt x 475.7775pt>
+File: ext2.jpg Graphic file (type jpg)
+<use ext2.jpg>
+Package luatex.def Info: ext2.jpg  used on input line 410.
+(luatex.def)             Requested size: 367.37534pt x 285.46869pt.
+ [23<./ext2.jpg>]
+<actsuggestion.jpg, id=92, 1239.63126pt x 726.715pt>
+File: actsuggestion.jpg Graphic file (type jpg)
+<use actsuggestion.jpg>
+Package luatex.def Info: actsuggestion.jpg  used on input line 434.
+(luatex.def)             Requested size: 495.84372pt x 290.68085pt.
+
+Overfull \hbox (52.26524pt too wide) in paragraph at lines 434--436
+ [][] 
+ []
+
+[24<./actsuggestion.jpg>]
+<component2.jpg, id=96, 1401.235pt x 574.145pt>
+File: component2.jpg Graphic file (type jpg)
+<use component2.jpg>
+Package luatex.def Info: component2.jpg  used on input line 449.
+(luatex.def)             Requested size: 560.48409pt x 229.65393pt.
+
+Overfull \hbox (116.90561pt too wide) in paragraph at lines 449--451
+ [][] 
+ []
+
+<internal2.jpg, id=97, 788.9475pt x 608.2725pt>
+File: internal2.jpg Graphic file (type jpg)
+<use internal2.jpg>
+Package luatex.def Info: internal2.jpg  used on input line 471.
+(luatex.def)             Requested size: 473.37215pt x 364.96632pt.
+
+Overfull \hbox (29.79367pt too wide) in paragraph at lines 471--473
+ [][] 
+ []
+
+[25<./component2.jpg>]
+<seqsuggest.jpg, id=101, 740.7675pt x 427.5975pt>
+File: seqsuggest.jpg Graphic file (type jpg)
+<use seqsuggest.jpg>
+Package luatex.def Info: seqsuggest.jpg  used on input line 478.
+(luatex.def)             Requested size: 444.46393pt x 256.56047pt.
+
+Overfull \hbox (0.88545pt too wide) in paragraph at lines 478--480
+ [][] 
+ []
+
+[26<./internal2.jpg>]
+<db2.jpg, id=105, 716.6775pt x 483.8075pt>
+File: db2.jpg Graphic file (type jpg)
+<use db2.jpg>
+Package luatex.def Info: db2.jpg  used on input line 493.
+(luatex.def)             Requested size: 430.00983pt x 290.28674pt.
+ [27<./seqsuggest.jpg>] [28<./db2.jpg>]
+<deploy2.jpg, id=112, 989.6975pt x 716.6775pt>
+File: deploy2.jpg Graphic file (type jpg)
+<use deploy2.jpg>
+Package luatex.def Info: deploy2.jpg  used on input line 528.
+(luatex.def)             Requested size: 494.84753pt x 358.33788pt.
+
+Overfull \hbox (51.26906pt too wide) in paragraph at lines 528--530
+ [][] 
+ []
+
+[29]
+Underfull \hbox (badness 10000) in paragraph at lines 536--538
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 539--541
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 542--544
+
+ []
+
+[30<./deploy2.jpg>] [31] (./sad.aux))
+
+Here is how much of LuaTeX's memory you used:
+ 2919 strings out of 478285
+ 100000,1977958 words of node,token memory allocated
+ 431 words of node memory still in use:
+   3 hlist, 1 vlist, 1 rule, 2 glue, 3 kern, 1 glyph, 4 attribute, 53 glue_spec,
+ 4 attribute_list, 1 write nodes
+   avail lists: 2:646,3:299,4:39,5:384,6:74,7:5955,8:2,9:496,10:25,11:554
+ 22870 multiletter control sequences out of 65536+600000
+ 32 fonts using 2267255 bytes
+ 55i,10n,59p,372b,253s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf></usr/shar
+e/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf>
+Output written on sad.pdf (32 pages, 1895315 bytes).
+
+PDF statistics: 138 PDF objects out of 1000 (max. 8388607)
+ 78 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 131072)
+ 1 words of extra memory for PDF output out of 10000 (max. 100000000)
+

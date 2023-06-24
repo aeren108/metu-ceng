@@ -1,0 +1,175 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -intstyle ise -v 3 -s 5 -n
+3 -fastpaths -xml Board232.twx Board232.ncd -o Board232.twr Board232.pcf -ucf
+Board232.ucf
+
+Design file:              Board232.ncd
+Physical constraint file: Board232.pcf
+Device,package,speed:     xc3s250e,cp132,-5 (PRODUCTION 1.27 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+INFO:Timing:3390 - This architecture does not support a default System Jitter 
+   value, please add SYSTEM_JITTER constraint to the UCF to modify the Clock 
+   Uncertainty calculation.
+INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and 
+   'Phase Error' calculations, these terms will be zero in the Clock 
+   Uncertainty calculation.  Please make appropriate modification to 
+   SYSTEM_JITTER to account for the unsupported Discrete Jitter and Phase 
+   Error.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock btn<0>
+------------+------------+------------+------------------+--------+
+            |Max Setup to|Max Hold to |                  | Clock  |
+Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
+------------+------------+------------+------------------+--------+
+btn<2>      |    3.471(R)|    2.979(R)|clk               |   0.000|
+sw<0>       |   -0.600(R)|    3.406(R)|clk               |   0.000|
+sw<1>       |    0.139(R)|    3.386(R)|clk               |   0.000|
+sw<2>       |   -0.323(R)|    3.155(R)|clk               |   0.000|
+sw<3>       |   -0.002(R)|    2.906(R)|clk               |   0.000|
+sw<4>       |    4.229(R)|    4.001(R)|clk               |   0.000|
+sw<5>       |    4.487(R)|    3.924(R)|clk               |   0.000|
+sw<6>       |    4.371(R)|    3.717(R)|clk               |   0.000|
+sw<7>       |    3.311(R)|    2.718(R)|clk               |   0.000|
+------------+------------+------------+------------------+--------+
+
+Setup/Hold to clock btn<3>
+------------+------------+------------+------------------+--------+
+            |Max Setup to|Max Hold to |                  | Clock  |
+Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
+------------+------------+------------+------------------+--------+
+btn<2>      |    3.510(R)|    2.930(R)|clk               |   0.000|
+sw<0>       |   -0.561(R)|    3.357(R)|clk               |   0.000|
+sw<1>       |    0.178(R)|    3.337(R)|clk               |   0.000|
+sw<2>       |   -0.284(R)|    3.106(R)|clk               |   0.000|
+sw<3>       |    0.037(R)|    2.857(R)|clk               |   0.000|
+sw<4>       |    4.268(R)|    3.952(R)|clk               |   0.000|
+sw<5>       |    4.526(R)|    3.875(R)|clk               |   0.000|
+sw<6>       |    4.410(R)|    3.668(R)|clk               |   0.000|
+sw<7>       |    3.350(R)|    2.669(R)|clk               |   0.000|
+------------+------------+------------+------------------+--------+
+
+Clock btn<0> to Pad
+------------+------------+------------------+--------+
+            | clk (edge) |                  | Clock  |
+Destination |   to PAD   |Internal Clock(s) | Phase  |
+------------+------------+------------------+--------+
+led<2>      |    8.493(R)|clk               |   0.000|
+led<4>      |   11.045(R)|clk               |   0.000|
+seg<0>      |   26.341(R)|clk               |   0.000|
+seg<1>      |   26.689(R)|clk               |   0.000|
+seg<2>      |   26.449(R)|clk               |   0.000|
+seg<3>      |   26.140(R)|clk               |   0.000|
+seg<4>      |   26.155(R)|clk               |   0.000|
+seg<5>      |   25.629(R)|clk               |   0.000|
+seg<6>      |   28.055(R)|clk               |   0.000|
+------------+------------+------------------+--------+
+
+Clock btn<3> to Pad
+------------+------------+------------------+--------+
+            | clk (edge) |                  | Clock  |
+Destination |   to PAD   |Internal Clock(s) | Phase  |
+------------+------------+------------------+--------+
+led<2>      |    8.444(R)|clk               |   0.000|
+led<4>      |   10.996(R)|clk               |   0.000|
+seg<0>      |   26.292(R)|clk               |   0.000|
+seg<1>      |   26.640(R)|clk               |   0.000|
+seg<2>      |   26.400(R)|clk               |   0.000|
+seg<3>      |   26.091(R)|clk               |   0.000|
+seg<4>      |   26.106(R)|clk               |   0.000|
+seg<5>      |   25.580(R)|clk               |   0.000|
+seg<6>      |   28.006(R)|clk               |   0.000|
+------------+------------+------------------+--------+
+
+Clock mclk to Pad
+------------+------------+------------------+--------+
+            | clk (edge) |                  | Clock  |
+Destination |   to PAD   |Internal Clock(s) | Phase  |
+------------+------------+------------------+--------+
+an<0>       |    9.180(R)|mclk_BUFGP        |   0.000|
+an<1>       |    9.004(R)|mclk_BUFGP        |   0.000|
+an<2>       |   10.992(R)|mclk_BUFGP        |   0.000|
+an<3>       |   10.760(R)|mclk_BUFGP        |   0.000|
+seg<0>      |   12.497(R)|mclk_BUFGP        |   0.000|
+seg<1>      |   13.125(R)|mclk_BUFGP        |   0.000|
+seg<2>      |   13.014(R)|mclk_BUFGP        |   0.000|
+seg<3>      |   12.697(R)|mclk_BUFGP        |   0.000|
+seg<4>      |   12.720(R)|mclk_BUFGP        |   0.000|
+seg<5>      |   12.246(R)|mclk_BUFGP        |   0.000|
+seg<6>      |   14.269(R)|mclk_BUFGP        |   0.000|
+------------+------------+------------------+--------+
+
+Clock to Setup on destination clock btn<0>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+btn<0>         |    9.731|         |         |         |
+btn<3>         |    9.731|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock btn<3>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+btn<0>         |    9.731|         |         |         |
+btn<3>         |    9.731|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock mclk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+mclk           |    3.847|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+sw<7>          |seg<0>         |   11.137|
+sw<7>          |seg<1>         |   11.633|
+sw<7>          |seg<2>         |   11.639|
+sw<7>          |seg<3>         |   11.198|
+sw<7>          |seg<4>         |   11.345|
+sw<7>          |seg<5>         |   10.611|
+sw<7>          |seg<6>         |   12.945|
+---------------+---------------+---------+
+
+
+Analysis completed Mon Jun  6 15:35:32 2022 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 333 MB
+
+
+

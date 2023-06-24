@@ -1,0 +1,810 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.03 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.03 secs
+ 
+--> 
+Reading design: Board232.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Board232.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Board232"
+Output Format                      : NGC
+Target Device                      : xc3s250e-5-cp132
+
+---- Source Options
+Top Module Name                    : Board232
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "lab4_2.v" in library work
+Compiling verilog file "Board232.v" in library work
+Module <lab4_2> compiled
+Module <bin2bcd> compiled
+Module <Board232> compiled
+No errors in compilation
+Analysis of file <"Board232.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <Board232> in library <work>.
+
+Analyzing hierarchy for module <bin2bcd> in library <work> with parameters.
+	W = "00000000000000000000000000001010"
+
+Analyzing hierarchy for module <lab4_2> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <Board232>.
+WARNING:Xst:905 - "Board232.v" line 82: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <sw>, <bcd_result>, <tmp_digit>
+Module <Board232> is correct for synthesis.
+ 
+Analyzing module <bin2bcd> in library <work>.
+	W = 32'sb00000000000000000000000000001010
+Module <bin2bcd> is correct for synthesis.
+ 
+Analyzing module <lab4_2> in library <work>.
+Module <lab4_2> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+INFO:Xst:2679 - Register <cacheFull> in unit <lab4_2> has a constant value of 1 during circuit operation. The register is replaced by logic.
+
+Synthesizing Unit <bin2bcd>.
+    Related source file is "Board232.v".
+WARNING:Xst:1305 - Output <bcd<20:13>> is never assigned. Tied to value 00000000.
+    Found 4-bit adder for signal <$add0000> created at line 19.
+    Found 4-bit adder for signal <$add0001> created at line 19.
+    Found 4-bit adder for signal <$add0002> created at line 19.
+    Found 4-bit adder for signal <$add0003> created at line 19.
+    Found 4-bit adder for signal <$add0004> created at line 19.
+    Found 4-bit adder for signal <$add0005> created at line 19.
+    Found 4-bit adder for signal <$add0006> created at line 19.
+    Found 4-bit adder for signal <$add0007> created at line 19.
+    Found 4-bit adder for signal <$add0008> created at line 19.
+    Found 4-bit adder for signal <$add0009> created at line 19.
+    Found 4-bit adder for signal <$add0010> created at line 19.
+    Found 4-bit adder for signal <$add0011> created at line 19.
+    Found 4-bit comparator greater for signal <bcd_1$cmp_gt0000> created at line 18.
+    Found 4-bit comparator greater for signal <bcd_5$cmp_gt0000> created at line 18.
+    Found 4-bit comparator greater for signal <bcd_9$cmp_gt0000> created at line 18.
+    Found 4-bit comparator greater for signal <mux0000$cmp_gt0000> created at line 18.
+    Found 4-bit comparator greater for signal <mux0003$cmp_gt0000> created at line 18.
+    Found 4-bit comparator greater for signal <mux0006$cmp_gt0000> created at line 18.
+    Found 4-bit comparator greater for signal <mux0012$cmp_gt0000> created at line 18.
+    Found 4-bit comparator greater for signal <mux0015$cmp_gt0000> created at line 18.
+    Found 4-bit comparator greater for signal <mux0019$cmp_gt0000> created at line 18.
+    Found 4-bit comparator greater for signal <mux0022$cmp_gt0000> created at line 18.
+    Found 4-bit comparator greater for signal <mux0026$cmp_gt0000> created at line 18.
+    Found 4-bit comparator greater for signal <mux0029$cmp_gt0000> created at line 18.
+    Summary:
+	inferred  12 Adder/Subtractor(s).
+	inferred  12 Comparator(s).
+Unit <bin2bcd> synthesized.
+
+
+Synthesizing Unit <lab4_2>.
+    Related source file is "lab4_2.v".
+    Found 10-bit register for signal <result>.
+    Found 1-bit register for signal <overflow>.
+    Found 1-bit register for signal <invalidOp>.
+    Found 10-bit adder for signal <$add0000> created at line 66.
+    Found 10-bit adder for signal <$add0001> created at line 70.
+    Found 10-bit adder for signal <$add0002> created at line 74.
+    Found 8-bit subtractor for signal <$sub0000> created at line 99.
+    Found 10-bit adder for signal <add0001$addsub0000> created at line 70.
+    Found 4-bit register for signal <bits>.
+    Found 6-bit register for signal <i>.
+    Found 8-bit comparator not equal for signal <i$cmp_ne0000> created at line 99.
+    Found 6-bit register for signal <offset>.
+    Found 4-bit adder for signal <old_bits_10$addsub0000> created at line 79.
+    Found 4-bit adder for signal <old_bits_11$addsub0000> created at line 79.
+    Found 4-bit adder for signal <old_bits_12$addsub0000> created at line 79.
+    Found 4-bit adder for signal <old_bits_13$addsub0000> created at line 79.
+    Found 4-bit adder for signal <old_bits_14$addsub0000> created at line 79.
+    Found 4-bit adder for signal <old_bits_15$addsub0000> created at line 79.
+    Found 4-bit adder for signal <old_bits_6$addsub0000> created at line 79.
+    Found 4-bit adder for signal <old_bits_7$addsub0000> created at line 79.
+    Found 4-bit adder for signal <old_bits_8$addsub0000> created at line 79.
+    Found 4-bit adder for signal <old_bits_9$addsub0000> created at line 79.
+    Found 96-bit register for signal <ops>.
+    Found 10-bit adder carry out for signal <overflow$addsub0004> created at line 67.
+    Found 10-bit adder carry out for signal <overflow$addsub0005> created at line 71.
+    Found 11-bit adder carry out for signal <overflow$addsub0006> created at line 71.
+    Found 20-bit adder carry out for signal <overflow$addsub0007> created at line 75.
+    Found 11-bit comparator greatequal for signal <overflow$cmp_ge0000> created at line 67.
+    Found 12-bit comparator greatequal for signal <overflow$cmp_ge0001> created at line 71.
+    Found 21-bit comparator greatequal for signal <overflow$cmp_ge0002> created at line 75.
+    Found 10x10-bit multiplier for signal <overflow$mult0000> created at line 75.
+    Found 10-bit register for signal <p0>.
+    Found 10-bit register for signal <p1>.
+    Found 6-bit up counter for signal <size>.
+    Found 128-bit register for signal <vals>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred 272 D-type flip-flop(s).
+	inferred  19 Adder/Subtractor(s).
+	inferred   1 Multiplier(s).
+	inferred   4 Comparator(s).
+	inferred   7 Multiplexer(s).
+Unit <lab4_2> synthesized.
+
+
+Synthesizing Unit <Board232>.
+    Related source file is "Board232.v".
+WARNING:Xst:647 - Input <btn<1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:646 - Signal <tmp_digit> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 4x4-bit ROM for signal <an>.
+    Found 32x7-bit ROM for signal <seg>.
+    Found 27-bit up counter for signal <mclk_counter>.
+    Summary:
+	inferred   2 ROM(s).
+	inferred   1 Counter(s).
+	inferred   5 Multiplexer(s).
+Unit <Board232> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 2
+ 32x7-bit ROM                                          : 1
+ 4x4-bit ROM                                           : 1
+# Multipliers                                          : 1
+ 10x10-bit multiplier                                  : 1
+# Adders/Subtractors                                   : 31
+ 10-bit adder                                          : 4
+ 10-bit adder carry out                                : 2
+ 11-bit adder carry out                                : 1
+ 20-bit adder carry out                                : 1
+ 4-bit adder                                           : 22
+ 8-bit subtractor                                      : 1
+# Counters                                             : 2
+ 27-bit up counter                                     : 1
+ 6-bit up counter                                      : 1
+# Registers                                            : 81
+ 1-bit register                                        : 12
+ 10-bit register                                       : 2
+ 3-bit register                                        : 32
+ 4-bit register                                        : 33
+ 6-bit register                                        : 2
+# Comparators                                          : 16
+ 11-bit comparator greatequal                          : 1
+ 12-bit comparator greatequal                          : 1
+ 21-bit comparator greatequal                          : 1
+ 4-bit comparator greater                              : 12
+ 8-bit comparator not equal                            : 1
+# Multiplexers                                         : 3
+ 3-bit 32-to-1 multiplexer                             : 1
+ 4-bit 32-to-1 multiplexer                             : 1
+ 5-bit 4-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+INFO:Xst:2261 - The FF/Latch <offset_4> in Unit <HH> is equivalent to the following FF/Latch, which will be removed : <offset_5> 
+WARNING:Xst:1293 - FF/Latch <i_4> has a constant value of 0 in block <HH>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <i_5> has a constant value of 0 in block <HH>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <offset_4> has a constant value of 0 in block <HH>. This FF/Latch will be trimmed during the optimization process.
+
+Synthesizing (advanced) Unit <lab4_2>.
+	Found pipelined multiplier on signal <overflow_mult0000>:
+		- 1 pipeline level(s) found in a register on signal <p0>.
+		Pushing register(s) into the multiplier macro.
+
+		- 1 pipeline level(s) found in a register on signal <p1>.
+		Pushing register(s) into the multiplier macro.
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_overflow_mult0000 by adding 1 register level(s).
+Unit <lab4_2> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 2
+ 32x7-bit ROM                                          : 1
+ 4x4-bit ROM                                           : 1
+# Multipliers                                          : 1
+ 10x10-bit registered multiplier                       : 1
+# Adders/Subtractors                                   : 31
+ 10-bit adder                                          : 4
+ 10-bit adder carry out                                : 2
+ 11-bit adder carry out                                : 1
+ 20-bit adder carry out                                : 1
+ 4-bit adder                                           : 22
+ 8-bit subtractor                                      : 1
+# Counters                                             : 2
+ 27-bit up counter                                     : 1
+ 6-bit up counter                                      : 1
+# Registers                                            : 272
+ Flip-Flops                                            : 272
+# Comparators                                          : 16
+ 11-bit comparator greatequal                          : 1
+ 12-bit comparator greatequal                          : 1
+ 21-bit comparator greatequal                          : 1
+ 4-bit comparator greater                              : 12
+ 8-bit comparator not equal                            : 1
+# Multiplexers                                         : 3
+ 3-bit 32-to-1 multiplexer                             : 1
+ 4-bit 32-to-1 multiplexer                             : 1
+ 5-bit 4-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1293 - FF/Latch <i_4> has a constant value of 0 in block <lab4_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_5> has a constant value of 0 in block <lab4_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <offset_4> has a constant value of 0 in block <lab4_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <offset_5> has a constant value of 0 in block <lab4_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <ops_16_0> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_16_1> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_16_2> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_17_0> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_17_1> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_17_2> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_20_0> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_20_1> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_20_2> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_18_0> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_18_1> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_18_2> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_19_0> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_19_1> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_19_2> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_23_0> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_23_1> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_23_2> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_21_0> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_21_1> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_21_2> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_22_0> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_22_1> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_22_2> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_26_0> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_26_1> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_26_2> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_24_0> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_24_1> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_24_2> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_25_0> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_25_1> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_25_2> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_27_0> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_27_1> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_27_2> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_28_0> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_28_1> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_28_2> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_29_0> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_29_1> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_29_2> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_30_0> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_30_1> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_30_2> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_31_0> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_31_1> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <ops_31_2> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_18_0> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_18_1> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_18_2> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_18_3> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_16_0> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_16_1> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_16_2> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_16_3> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_17_0> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_17_1> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_17_2> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_17_3> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_21_0> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_21_1> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_21_2> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_21_3> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_19_0> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_19_1> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_19_2> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_19_3> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_20_0> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_20_1> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_20_2> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_20_3> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_22_0> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_22_1> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_22_2> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_22_3> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_23_0> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_23_1> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_23_2> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_23_3> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_24_0> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_24_1> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_24_2> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_24_3> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_25_0> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_25_1> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_25_2> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_25_3> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_28_0> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_28_1> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_28_2> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_28_3> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_26_0> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_26_1> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_26_2> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_26_3> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_27_0> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_27_1> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_27_2> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_27_3> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_29_0> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_29_1> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_29_2> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_29_3> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_30_0> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_30_1> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_30_2> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_30_3> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_31_0> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_31_1> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_31_2> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <vals_31_3> of sequential type is unconnected in block <lab4_2>.
+WARNING:Xst:2677 - Node <mclk_counter_26> of sequential type is unconnected in block <Board232>.
+
+Optimizing unit <Board232> ...
+
+Optimizing unit <bin2bcd> ...
+
+Optimizing unit <lab4_2> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Board232, actual ratio is 9.
+FlipFlop HH/i_0 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 189
+ Flip-Flops                                            : 189
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : Board232.ngr
+Top Level Output File Name         : Board232
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 43
+
+Cell Usage :
+# BELS                             : 639
+#      GND                         : 1
+#      INV                         : 3
+#      LUT1                        : 67
+#      LUT2                        : 46
+#      LUT3                        : 110
+#      LUT3_D                      : 4
+#      LUT3_L                      : 2
+#      LUT4                        : 138
+#      LUT4_D                      : 4
+#      LUT4_L                      : 7
+#      MULT_AND                    : 4
+#      MUXCY                       : 107
+#      MUXF5                       : 47
+#      MUXF6                       : 14
+#      MUXF7                       : 7
+#      VCC                         : 1
+#      XORCY                       : 77
+# FlipFlops/Latches                : 189
+#      FD                          : 26
+#      FDCE                        : 117
+#      FDE                         : 46
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 41
+#      IBUF                        : 11
+#      OBUF                        : 30
+# MULTs                            : 1
+#      MULT18X18SIO                : 1
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s250ecp132-5 
+
+ Number of Slices:                      219  out of   2448     8%  
+ Number of Slice Flip Flops:            188  out of   4896     3%  
+ Number of 4 input LUTs:                381  out of   4896     7%  
+ Number of IOs:                          43
+ Number of bonded IOBs:                  42  out of     92    45%  
+    IOB Flip Flops:                       1
+ Number of MULT18X18SIOs:                 1  out of     12     8%  
+ Number of GCLKs:                         2  out of     24     8%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+mclk                               | BUFGP                  | 26    |
+clk1(clk1:O)                       | BUFG(*)(HH/size_5)     | 164   |
+-----------------------------------+------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+btn<2>                             | IBUF                   | 117   |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 10.003ns (Maximum Frequency: 99.968MHz)
+   Minimum input arrival time before clock: 7.674ns
+   Maximum output required time after clock: 22.768ns
+   Maximum combinational path delay: 11.542ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'mclk'
+  Clock period: 4.191ns (frequency: 238.635MHz)
+  Total number of paths / destination ports: 351 / 26
+-------------------------------------------------------------------------
+Delay:               4.191ns (Levels of Logic = 26)
+  Source:            mclk_counter_1 (FF)
+  Destination:       mclk_counter_25 (FF)
+  Source Clock:      mclk rising
+  Destination Clock: mclk rising
+
+  Data Path: mclk_counter_1 to mclk_counter_25
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               1   0.514   0.509  mclk_counter_1 (mclk_counter_1)
+     LUT1:I0->O            1   0.612   0.000  Mcount_mclk_counter_cy<1>_rt (Mcount_mclk_counter_cy<1>_rt)
+     MUXCY:S->O            1   0.404   0.000  Mcount_mclk_counter_cy<1> (Mcount_mclk_counter_cy<1>)
+     MUXCY:CI->O           1   0.052   0.000  Mcount_mclk_counter_cy<2> (Mcount_mclk_counter_cy<2>)
+     MUXCY:CI->O           1   0.052   0.000  Mcount_mclk_counter_cy<3> (Mcount_mclk_counter_cy<3>)
+     MUXCY:CI->O           1   0.052   0.000  Mcount_mclk_counter_cy<4> (Mcount_mclk_counter_cy<4>)
+     MUXCY:CI->O           1   0.051   0.000  Mcount_mclk_counter_cy<5> (Mcount_mclk_counter_cy<5>)
+     MUXCY:CI->O           1   0.051   0.000  Mcount_mclk_counter_cy<6> (Mcount_mclk_counter_cy<6>)
+     MUXCY:CI->O           1   0.051   0.000  Mcount_mclk_counter_cy<7> (Mcount_mclk_counter_cy<7>)
+     MUXCY:CI->O           1   0.051   0.000  Mcount_mclk_counter_cy<8> (Mcount_mclk_counter_cy<8>)
+     MUXCY:CI->O           1   0.051   0.000  Mcount_mclk_counter_cy<9> (Mcount_mclk_counter_cy<9>)
+     MUXCY:CI->O           1   0.051   0.000  Mcount_mclk_counter_cy<10> (Mcount_mclk_counter_cy<10>)
+     MUXCY:CI->O           1   0.051   0.000  Mcount_mclk_counter_cy<11> (Mcount_mclk_counter_cy<11>)
+     MUXCY:CI->O           1   0.051   0.000  Mcount_mclk_counter_cy<12> (Mcount_mclk_counter_cy<12>)
+     MUXCY:CI->O           1   0.051   0.000  Mcount_mclk_counter_cy<13> (Mcount_mclk_counter_cy<13>)
+     MUXCY:CI->O           1   0.051   0.000  Mcount_mclk_counter_cy<14> (Mcount_mclk_counter_cy<14>)
+     MUXCY:CI->O           1   0.051   0.000  Mcount_mclk_counter_cy<15> (Mcount_mclk_counter_cy<15>)
+     MUXCY:CI->O           1   0.051   0.000  Mcount_mclk_counter_cy<16> (Mcount_mclk_counter_cy<16>)
+     MUXCY:CI->O           1   0.051   0.000  Mcount_mclk_counter_cy<17> (Mcount_mclk_counter_cy<17>)
+     MUXCY:CI->O           1   0.051   0.000  Mcount_mclk_counter_cy<18> (Mcount_mclk_counter_cy<18>)
+     MUXCY:CI->O           1   0.051   0.000  Mcount_mclk_counter_cy<19> (Mcount_mclk_counter_cy<19>)
+     MUXCY:CI->O           1   0.051   0.000  Mcount_mclk_counter_cy<20> (Mcount_mclk_counter_cy<20>)
+     MUXCY:CI->O           1   0.051   0.000  Mcount_mclk_counter_cy<21> (Mcount_mclk_counter_cy<21>)
+     MUXCY:CI->O           1   0.051   0.000  Mcount_mclk_counter_cy<22> (Mcount_mclk_counter_cy<22>)
+     MUXCY:CI->O           1   0.051   0.000  Mcount_mclk_counter_cy<23> (Mcount_mclk_counter_cy<23>)
+     MUXCY:CI->O           0   0.051   0.000  Mcount_mclk_counter_cy<24> (Mcount_mclk_counter_cy<24>)
+     XORCY:CI->O           1   0.699   0.000  Mcount_mclk_counter_xor<25> (Result<25>)
+     FD:D                      0.268          mclk_counter_25
+    ----------------------------------------
+    Total                      4.191ns (3.682ns logic, 0.509ns route)
+                                       (87.9% logic, 12.1% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk1'
+  Clock period: 10.003ns (frequency: 99.968MHz)
+  Total number of paths / destination ports: 31987 / 223
+-------------------------------------------------------------------------
+Delay:               10.003ns (Levels of Logic = 17)
+  Source:            HH/i_0_1 (FF)
+  Destination:       HH/Mmult_overflow_mult0000 (MULT)
+  Source Clock:      clk1 rising
+  Destination Clock: clk1 rising
+
+  Data Path: HH/i_0_1 to HH/Mmult_overflow_mult0000
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q            32   0.514   1.103  HH/i_0_1 (HH/i_0_1)
+     LUT3:I2->O            1   0.612   0.000  HH/Mmux__COND_5_51 (HH/Mmux__COND_5_51)
+     MUXF5:I1->O           1   0.278   0.000  HH/Mmux__COND_5_4_f5_0 (HH/Mmux__COND_5_4_f51)
+     MUXF6:I1->O           1   0.451   0.000  HH/Mmux__COND_5_3_f6_0 (HH/Mmux__COND_5_3_f61)
+     MUXF7:I1->O           9   0.451   0.727  HH/Mmux__COND_5_2_f7_0 (HH/_COND_5<1>)
+     LUT3:I2->O            1   0.612   0.360  HH/Madd__add0001C1 (HH/Madd__add0001C)
+     LUT4:I3->O            1   0.612   0.000  HH/Madd__add0001_Madd_lut<2> (HH/Madd__add0001_Madd_lut<2>)
+     MUXCY:S->O            1   0.404   0.000  HH/Madd__add0001_Madd_cy<2> (HH/Madd__add0001_Madd_cy<2>)
+     MUXCY:CI->O           1   0.052   0.000  HH/Madd__add0001_Madd_cy<3> (HH/Madd__add0001_Madd_cy<3>)
+     MUXCY:CI->O           1   0.052   0.000  HH/Madd__add0001_Madd_cy<4> (HH/Madd__add0001_Madd_cy<4>)
+     MUXCY:CI->O           1   0.052   0.000  HH/Madd__add0001_Madd_cy<5> (HH/Madd__add0001_Madd_cy<5>)
+     MUXCY:CI->O           1   0.052   0.000  HH/Madd__add0001_Madd_cy<6> (HH/Madd__add0001_Madd_cy<6>)
+     MUXCY:CI->O           1   0.052   0.000  HH/Madd__add0001_Madd_cy<7> (HH/Madd__add0001_Madd_cy<7>)
+     MUXCY:CI->O           0   0.052   0.000  HH/Madd__add0001_Madd_cy<8> (HH/Madd__add0001_Madd_cy<8>)
+     XORCY:CI->O           1   0.699   0.360  HH/Madd__add0001_Madd_xor<9> (HH/_add0001<9>)
+     LUT4:I3->O            1   0.612   0.360  HH/p0_mux000025 (HH/p0_mux000025)
+     LUT4:I3->O            1   0.612   0.000  HH/p0_mux000052_F (N110)
+     MUXF5:I0->O           3   0.278   0.451  HH/p0_mux000052 (HH/p0_mux0000)
+     MULT18X18SIO:A9           0.198          HH/Mmult_overflow_mult0000
+    ----------------------------------------
+    Total                     10.003ns (6.642ns logic, 3.361ns route)
+                                       (66.4% logic, 33.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk1'
+  Total number of paths / destination ports: 682 / 279
+-------------------------------------------------------------------------
+Offset:              7.674ns (Levels of Logic = 5)
+  Source:            sw<5> (PAD)
+  Destination:       HH/vals_13_3 (FF)
+  Destination Clock: clk1 rising
+
+  Data Path: sw<5> to HH/vals_13_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            18   1.106   1.060  sw_5_IBUF (sw_5_IBUF)
+     LUT3:I0->O            3   0.612   0.603  HH/size_and000012 (HH/N0)
+     LUT3:I0->O            6   0.612   0.721  HH/ops_0_not000111 (HH/N27)
+     LUT3:I0->O            4   0.612   0.651  HH/ops_13_not000111 (HH/N35)
+     LUT3:I0->O            7   0.612   0.602  HH/ops_9_not00011 (HH/ops_9_not0001)
+     FDCE:CE                   0.483          HH/ops_9_0
+    ----------------------------------------
+    Total                      7.674ns (4.037ns logic, 3.637ns route)
+                                       (52.6% logic, 47.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'mclk'
+  Total number of paths / destination ports: 158 / 11
+-------------------------------------------------------------------------
+Offset:              9.799ns (Levels of Logic = 7)
+  Source:            mclk_counter_17 (FF)
+  Destination:       seg<6> (PAD)
+  Source Clock:      mclk rising
+
+  Data Path: mclk_counter_17 to seg<6>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              21   0.514   1.111  mclk_counter_17 (mclk_counter_17)
+     LUT3:I0->O            1   0.612   0.000  Mmux__old_tmp_digit_2_4 (Mmux__old_tmp_digit_2_4)
+     MUXF5:I0->O          10   0.278   0.902  Mmux__old_tmp_digit_2_2_f5 (_old_tmp_digit_2<0>)
+     LUT4:I0->O            1   0.612   0.360  Mrom_seg6122_SW0 (N80)
+     LUT4:I3->O            2   0.612   0.383  Mrom_seg6122 (Mrom_seg6122)
+     LUT4:I3->O            1   0.612   0.000  Mrom_seg6131_F (N108)
+     MUXF5:I0->O           1   0.278   0.357  Mrom_seg6131 (seg_6_OBUF)
+     OBUF:I->O                 3.169          seg_6_OBUF (seg<6>)
+    ----------------------------------------
+    Total                      9.799ns (6.687ns logic, 3.112ns route)
+                                       (68.2% logic, 31.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk1'
+  Total number of paths / destination ports: 194222 / 9
+-------------------------------------------------------------------------
+Offset:              22.768ns (Levels of Logic = 19)
+  Source:            HH/result_8 (FF)
+  Destination:       seg<6> (PAD)
+  Source Clock:      clk1 rising
+
+  Data Path: HH/result_8 to seg<6>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q             10   0.514   0.902  HH/result_8 (HH/result_8)
+     LUT4:I0->O            5   0.612   0.607  B2BCD/mux0003_cmp_gt00001 (B2BCD/mux0003_cmp_gt0000)
+     LUT4:I1->O            7   0.612   0.632  B2BCD/_mux001111 (B2BCD/N13)
+     LUT4:I2->O            4   0.612   0.651  B2BCD/_mux001311 (B2BCD/N3)
+     LUT3:I0->O            3   0.612   0.603  B2BCD/_mux001811 (B2BCD/N14)
+     LUT4:I0->O            2   0.612   0.532  B2BCD/Madd__add0006_cy<1>11 (B2BCD/Madd__add0006_cy<1>)
+     LUT3:I0->O            1   0.612   0.000  B2BCD/mux0022_cmp_gt000036_G (N123)
+     MUXF5:I1->O           6   0.278   0.721  B2BCD/mux0022_cmp_gt000036 (B2BCD/mux0022_cmp_gt0000)
+     LUT3:I0->O            5   0.612   0.568  B2BCD/_mux003011 (B2BCD/N4)
+     LUT4:I2->O            3   0.612   0.520  B2BCD/mux0029_cmp_gt00001 (B2BCD/mux0029_cmp_gt0000)
+     LUT4:I1->O            3   0.612   0.520  B2BCD/bcd_8_mux000011 (B2BCD/N19)
+     LUT3:I1->O            1   0.612   0.509  B2BCD/bcd_6_mux000021 (B2BCD/N121)
+     LUT4:I0->O            1   0.612   0.426  old_tmp_digit_2_mux0001<2>1 (old_tmp_digit_2_mux0001<2>)
+     LUT3:I1->O            1   0.612   0.000  Mmux__old_tmp_digit_2_32 (Mmux__old_tmp_digit_2_32)
+     MUXF5:I1->O          10   0.278   0.780  Mmux__old_tmp_digit_2_2_f5_1 (_old_tmp_digit_2<2>)
+     LUT4:I2->O            1   0.612   0.360  Mrom_seg6122_SW0 (N80)
+     LUT4:I3->O            2   0.612   0.383  Mrom_seg6122 (Mrom_seg6122)
+     LUT4:I3->O            1   0.612   0.000  Mrom_seg6131_F (N108)
+     MUXF5:I0->O           1   0.278   0.357  Mrom_seg6131 (seg_6_OBUF)
+     OBUF:I->O                 3.169          seg_6_OBUF (seg<6>)
+    ----------------------------------------
+    Total                     22.768ns (13.697ns logic, 9.071ns route)
+                                       (60.2% logic, 39.8% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 141 / 7
+-------------------------------------------------------------------------
+Delay:               11.542ns (Levels of Logic = 9)
+  Source:            sw<7> (PAD)
+  Destination:       seg<6> (PAD)
+
+  Data Path: sw<7> to seg<6>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            27   1.106   1.224  sw_7_IBUF (sw_7_IBUF)
+     LUT4:I0->O            1   0.612   0.426  old_tmp_digit_2_mux0003<0>1 (old_tmp_digit_2_mux0003<0>)
+     LUT3:I1->O            1   0.612   0.000  Mmux__old_tmp_digit_2_4 (Mmux__old_tmp_digit_2_4)
+     MUXF5:I0->O          10   0.278   0.902  Mmux__old_tmp_digit_2_2_f5 (_old_tmp_digit_2<0>)
+     LUT4:I0->O            1   0.612   0.360  Mrom_seg6122_SW0 (N80)
+     LUT4:I3->O            2   0.612   0.383  Mrom_seg6122 (Mrom_seg6122)
+     LUT4:I3->O            1   0.612   0.000  Mrom_seg6131_F (N108)
+     MUXF5:I0->O           1   0.278   0.357  Mrom_seg6131 (seg_6_OBUF)
+     OBUF:I->O                 3.169          seg_6_OBUF (seg<6>)
+    ----------------------------------------
+    Total                     11.542ns (7.891ns logic, 3.651ns route)
+                                       (68.4% logic, 31.6% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 6.16 secs
+ 
+--> 
+
+
+Total memory usage is 519884 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  125 (   0 filtered)
+Number of infos    :    3 (   0 filtered)
+

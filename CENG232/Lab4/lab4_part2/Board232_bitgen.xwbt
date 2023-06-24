@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/aeren/Okul/CENG232/Lab4/lab4_part2/Board232.ncd
+OUTFILE=/home/aeren/Okul/CENG232/Lab4/lab4_part2/Board232.bit
+FAMILY=Spartan3E
+PART=xc3s250e-5cp132
+WORKINGDIR=/home/aeren/Okul/CENG232/Lab4/lab4_part2
+LICENSE=WebPack
+USER_INFO=212473116_0_0_378

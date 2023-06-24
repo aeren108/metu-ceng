@@ -1,0 +1,271 @@
+\documentclass[12pt,a4paper, margin=1in]{article}
+\usepackage{fullpage}
+\usepackage{amsfonts, amsmath, pifont}
+\usepackage{amsthm}
+\usepackage{amsmath}
+
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ % total={210mm,297mm},
+ left=10mm,
+ right=10mm,
+ top=5mm,
+ bottom=10mm,
+ }
+ \author{
+  Çolak, Ahmet Eren\\
+  \texttt{e2587921@ceng.metu.edu.tr}
+}
+\title{CENG 382 - Analysis of Dynamic Systems \\
+20221\\
+Take Home Exam 3 Solutions}
+\begin{document}
+\maketitle
+
+\noindent\rule{19cm}{1.2pt}
+\newcommand\ddfrac[2]{\frac{\displaystyle #1}{\displaystyle #2}}
+
+\begin{enumerate}
+% Write your solutions in the following items.
+
+    \item % Q1
+        \begin{enumerate}
+            \item 
+            Jacobian matrix of the system $F$ is:
+
+            \begin{equation*}
+                F(x_1, x_2) = \begin{bmatrix}
+                    \ddfrac{\partial f_1}{\partial x_1} & \ddfrac{\partial f_1}{\partial x_2} \\ \\
+                    \ddfrac{\partial f_2}{\partial x_1} & \ddfrac{\partial f_2}{\partial x_2} 
+                \end{bmatrix} = \begin{bmatrix}
+                    -1 & 2x_2 \\
+                    6x_1 & -2
+                \end{bmatrix}
+            \end{equation*}
+
+            \begin{equation*}
+                F(0,0) = \begin{bmatrix}
+                    -1 & 0 \\
+                    0 & -2
+                \end{bmatrix}
+            \end{equation*}
+
+            Characteristic equation of the Jacobian matrix at fixed point $x = (0,0)$ is:
+
+            \begin{equation*}
+                (\lambda + 1)(\lambda+2) = 0
+            \end{equation*}
+
+            Eigen values of the matrix are $\lambda_1 = -1$ and $\lambda_2 = -2$. Since all eigen values
+            are less than $0$, fixed point is stable.
+            \item 
+            If a Lyapunov function exists for the fixed point $x=(0,0)$, then the fixed point is stable.
+            Since Lyapunov function $V = x_1^2/2 + x_2^2/4$ is polynomial it is continous on $\mathbb{R}^2$.
+            First condition of Lyapunov function is satisfied.\newline
+
+            To find the minimum value of the Lyapunov function, let's check its partial derivatives.
+
+            \begin{equation*}
+                \ddfrac{\partial V(x_1,x_2)}{\partial x_1} = x_1 = 0 
+            \end{equation*}
+
+            \begin{equation*}
+                \ddfrac{\partial V(x_1,x_2)}{\partial x_2} = \ddfrac{x_2}{2} = 0
+            \end{equation*}
+
+            Minimum value of the Lyapunov functions is at $x_1 = 0, x_2=0$. Therefore the second condition is satisfied.
+            \newline
+
+            Lastly, if the Lyapunov function $V(x_1, x_2)$ is decreasing on a spherical region centered at the fixed point for
+            every trajectory of the system, then fixed point $x=(0,0)$ is stable.
+
+            \begin{equation*}
+                \ddfrac{dV(x_1, x_2)}{dt} = \ddfrac{\partial V(x_1, x_2)}{\partial x_1} \ddfrac{dx_1}{dt} + 
+                \ddfrac{\partial V(x_1, x_2)}{\partial x_2} \ddfrac{dx_2}{dt}
+            \end{equation*}
+
+            \begin{equation*}
+                \ddfrac{dV(x_1, x_2)}{dt} = x_1(x_2^2 - x_1) + \ddfrac{x_2}{2}(3x_1^2-2x_2)
+            \end{equation*}
+
+            \begin{equation*}
+                \ddfrac{dV(x_1, x_2)}{dt} = x_2^2(x_1 - 1) + x_1^2(3x_2/2 - 1)
+            \end{equation*}
+
+            When $x_1 < 1$ and $x_2 < 2/3$ condition is satisfied. Spherical region is centered at $x=(0,0)$ and its radius is $2/3$.
+            Since all conditions are satisfied, Lyapunov function $V$ exists and fixed point is stable.
+        \end{enumerate}
+        
+        
+    \item % Q2
+        Let's choose Lyapunov function as the $V(x_1, x_2, x_3) = x_1^2 + x_2^2 + x_3^2$. Since the function is polynomial
+        it is continous on $\mathbb{R}^3$.
+
+        Let's check where the minimum of the function is.
+
+        \begin{equation*}
+            \ddfrac{\partial V}{\partial x_1} = 2x_1 = 0, \ \ x_1 = 0
+        \end{equation*}
+        \begin{equation*}
+            \ddfrac{\partial V}{\partial x_2} = 2x_2 = 0,  \ \ x_2 = 0
+        \end{equation*}
+        \begin{equation*}
+            \ddfrac{\partial V}{\partial x_3} = 2x_3 = 0,  \ \ x_3 = 0
+        \end{equation*}
+        
+        Minimum of the function is at $(0,0,0)$, so the second condition is satisfied. 
+
+        Let's check $V(x(k+1))) - V(x(k))$ to determine $V(x(k))$ is non-increasing.
+
+        \begin{equation*}
+            V(x(k+1)) = \ddfrac{x_1^2}{2} + \ddfrac{x_2^2}{2} + \ddfrac{x_3^2}{4}
+        \end{equation*}
+
+        \begin{equation*}
+            V(x(k+1)) - V(x(k)) = \ddfrac{-x_1^2}{2} - \ddfrac{x_2^2}{2} - \ddfrac{3x_3^2}{4}
+        \end{equation*}
+
+        Since $x_1^2$, $x_2^2$ and $x_3^2$ are always non negative, it can be concluded that
+        $V(x(k+1)) - V(x(k)) \leq 0$. Since Lyapunov function is always non increasing fixed point is stable.
+    \item % Q3
+        Let's first determine the fixed points of the system. 
+
+        \begin{equation*}
+            \ddfrac{dx}{dt} = 0
+        \end{equation*}
+
+        \begin{equation*}
+            x_1 + x_2 - 4x-1(x_1^2 + x_2^2) = 0
+        \end{equation*}
+        \begin{equation*}
+            -x_1 + x_2 - 4x-2(x_1^2 + x_2^2) = 0
+        \end{equation*}
+        \begin{equation*}
+            \ddfrac{x_1+x_2}{x_1} = 4(x_1^2+x_2^2)
+        \end{equation*}
+        \begin{equation*}
+            \ddfrac{x_2-x_2}{x_2} = 4(x_1^2+x_2^2)
+        \end{equation*}
+        \begin{equation*}
+            1+\ddfrac{x_2}{x_1} = 1 - \ddfrac{x_1}{x_2}
+        \end{equation*}
+        \begin{equation*}
+            x_2^2 = -x_1^2
+        \end{equation*}
+
+        The only values that satisfy the equation $x_2^2 = -x_1^2$ are $x_1=0$ and $x_2=0$.
+         $(0,0)$ is the only fixed point of the system.
+        Then we check the stability of the fixed point via linearization. Jacobian matrix of the system is:
+
+        \begin{equation*}
+            F(x_1, x_2) = \begin{bmatrix}
+                \ddfrac{\partial f_1}{\partial x_1} & \ddfrac{\partial f_1}{\partial x_2} \\ \\
+                \ddfrac{\partial f_2}{\partial x_1} & \ddfrac{\partial f_2}{\partial x_2} 
+            \end{bmatrix} = \begin{bmatrix} 
+                1-4x_2^2 - 12x_1^2 & -8x_1x_2 + 1 \\
+                -1-8x_2x_1 & 1-12x_2-4x_1^2
+            \end{bmatrix}
+        \end{equation*}
+
+        \begin{equation*}
+            F(0,0)=\begin{bmatrix}
+                1 & 1 \\
+                -1 & 1
+            \end{bmatrix}
+        \end{equation*}
+
+        Characteristic equation of the matrix above is:
+
+        \begin{equation*}
+            \lambda^2 - 2\lambda +2 = 0
+        \end{equation*}
+
+        Eigen values of the matrix are $\lambda_{1,2} = 1 \pm i$. Since real part of one of the eigen values
+        is positive, fixed point is unstable.
+        
+        To check if the system has a periodic limit cycle, we should find where the Lyapunov function is decreasing and increasing.
+
+        \begin{equation*}
+            \ddfrac{dV(x_1,x_2)}{dt} = x_1(x_1+x_2-4x_1(x_1^2+x_2^2)) + 
+            x_2(-x_1+x_2-4x_2(x_1^2+x_2^2))
+        \end{equation*}
+        \begin{equation*}
+            \ddfrac{dV(x_1,x_2)}{dt} = x_1^2+x_2^2 - 4x_1^4 - 8x_1^2x_2^ - 4x_2^4
+        \end{equation*}
+        \begin{equation*}
+            \ddfrac{dV(x_1,x_2)}{dt} = x_1^2+x_2^2 - 4(x_1^2+x_2^2)^2 = (x_1^2+x_2^2)(1-4(x_1^2+x_2^2))
+        \end{equation*}
+        
+        When $0 < x_1^2+x_2^2 < 4$, $V(x_1, x_2)$ is increasing and when $x_1^2+x_2^2 > 4$, $V(x_1, x_2)$ is decreasing.
+        Therefore the system has a periodic limit cycle on the circle $x_1^2 + x_2^2 = 4$.
+        
+    \item % Q4 
+        \begin{enumerate}
+            \item 
+                Fixed points satisfy the equation in discrete systems $x(k+1)=x(k)$.
+
+                \begin{equation*}
+                    x(k) = 3-x^2(k) 
+                \end{equation*}
+                \begin{equation*}
+                    x^2(k) + x(k) - 3 = 0 
+                \end{equation*}
+                \begin{equation*}
+                    \tilde{x}_{1,2} = \ddfrac{-1 \pm \sqrt{13}}{2}
+                \end{equation*}
+            \item 
+                Periodic points of prime period 2, satisfy the equation $f^2(x) = x$ where $f(x) = 3 - x^2$.
+
+                \begin{equation*}
+                    f^2(x) = f(3-x^2) = -4x^4 + 6x^2 - 6 = x
+                \end{equation*}
+                \begin{equation*}
+                    x^4-6x^2+x+6=0
+                \end{equation*}
+
+                Roots of the equation $x^2+x-3=0$ are also the roots of the equation $x^4-6x^2+x+6=0$. In other words
+                if the prime period of a value is $1$ (which means it is a fixed point), then $2$ is also its period.
+                Because if a value is repeated in every step, it means it also repeats in every $2$ step. Therefore 
+                we can divide $x^4-6x^2+x+6$ by $x^2+x-3$ without any remainders. When polynomial division is applied,
+                $x^4-6x^2+x+6 = (x^2+x-3)(x^2-x-2)$ is obtained. Roots of the $x^2-x-2$ are the values of prime period 2. This 
+                property of fixed points helps with finding roots.
+
+                \begin{equation*}
+                    x^2-x-2 = (x-2)(x+1) = 0
+                \end{equation*}
+                \begin{equation*}
+                    x_1 = 2, \ \ x_2 = -1
+                \end{equation*}
+                
+                Therefore periodic points of prime period 2 are $-1$ and $2$.
+
+            \item 
+                We can test the stability of periodic points via linearization. If the coefficient 
+                of $x$ in the linearized form of $f^2(x)$ is negative, then periodic point is stable.
+                \newline \newline
+                Linearization for periodic point $x=2$:
+
+                \begin{equation*}
+                    \ddfrac{df^2(x)}{dx} = -4x^3+12x, \ \ \ddfrac{df^2}{dx}(2) = -8
+                \end{equation*}
+                \begin{equation*}
+                    f^2(x) \cong f^2(2) + (-8)(x-2)
+                \end{equation*}
+
+                Since the coefficient of x ($-8$), is negative, periodic point is stable.
+                \newline \newline
+                Linearization for periodic point $x=-1$:
+                \begin{equation*}
+                    \ddfrac{df^2(x)}{dx} = -4x^3+12x, \ \ \ddfrac{df^2}{dx}(-1) = -8
+                \end{equation*}
+                \begin{equation*}
+                    f^2(x) \cong f^(-1) + (-8)(x+1)
+                \end{equation*}
+                Since the coefficient of x ($-8$), is negative, this periodic point is also stable.
+        \end{enumerate}
+
+
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,50 @@
+\contentsline {chapter}{\numberline {1}Introduction}{5}{}%
+\contentsline {section}{\numberline {1.1}Purpose and objectives of afetbilgi.com}{5}{}%
+\contentsline {section}{\numberline {1.2}Scope}{5}{}%
+\contentsline {section}{\numberline {1.3}Stakeholders and their concerns}{6}{}%
+\contentsline {chapter}{\numberline {2}References}{7}{}%
+\contentsline {chapter}{\numberline {3}Glossary}{8}{}%
+\contentsline {chapter}{\numberline {4}Architectural Views}{9}{}%
+\contentsline {section}{\numberline {4.1}Context View}{9}{}%
+\contentsline {subsection}{\numberline {4.1.1}Stakeholders' uses of this view}{9}{}%
+\contentsline {subsection}{\numberline {4.1.2}Context Diagram}{9}{}%
+\contentsline {subsection}{\numberline {4.1.3}External Interfaces}{11}{}%
+\contentsline {subsection}{\numberline {4.1.4}Interaction Scenarios}{12}{}%
+\contentsline {section}{\numberline {4.2}Functional View}{13}{}%
+\contentsline {subsection}{\numberline {4.2.1}Stakeholders' uses of this view}{13}{}%
+\contentsline {subsection}{\numberline {4.2.2}Component Diagram}{14}{}%
+\contentsline {subsection}{\numberline {4.2.3}Internal Interfaces}{15}{}%
+\contentsline {subsection}{\numberline {4.2.4}Interaction Patterns}{15}{}%
+\contentsline {section}{\numberline {4.3}Information View}{16}{}%
+\contentsline {subsection}{\numberline {4.3.1}Stakeholders' uses of this view}{16}{}%
+\contentsline {subsection}{\numberline {4.3.2}Database Class Diagram}{17}{}%
+\contentsline {subsection}{\numberline {4.3.3}Operations on Data}{18}{}%
+\contentsline {section}{\numberline {4.4}Deployment View}{18}{}%
+\contentsline {subsection}{\numberline {4.4.1}Stakeholders' uses of this view}{18}{}%
+\contentsline {subsection}{\numberline {4.4.2}Deployment Diagram}{19}{}%
+\contentsline {section}{\numberline {4.5}Design Rationale}{19}{}%
+\contentsline {chapter}{\numberline {5}Architectural Views for Suggestion to Improve the Existing System}{21}{}%
+\contentsline {section}{\numberline {5.1}Context View}{21}{}%
+\contentsline {subsection}{\numberline {5.1.1}Stakeholders' uses of this view}{21}{}%
+\contentsline {subsection}{\numberline {5.1.2}Context Diagram}{22}{}%
+\contentsline {subsubsection}{System Interfaces}{22}{}%
+\contentsline {subsubsection}{User Interfaces}{22}{}%
+\contentsline {subsubsection}{Software Interfaces}{22}{}%
+\contentsline {subsubsection}{Communication Interfaces}{22}{}%
+\contentsline {subsubsection}{Memory Constraints}{23}{}%
+\contentsline {subsubsection}{Operations}{23}{}%
+\contentsline {subsection}{\numberline {5.1.3}External Interfaces}{23}{}%
+\contentsline {subsection}{\numberline {5.1.4}Interaction Scenarios}{24}{}%
+\contentsline {section}{\numberline {5.2}Functional View}{24}{}%
+\contentsline {subsection}{\numberline {5.2.1}Stakeholders' uses of this view}{24}{}%
+\contentsline {subsection}{\numberline {5.2.2}Component Diagram}{25}{}%
+\contentsline {subsection}{\numberline {5.2.3}Internal Interfaces}{26}{}%
+\contentsline {subsection}{\numberline {5.2.4}Interaction Patterns}{27}{}%
+\contentsline {section}{\numberline {5.3}Information View}{27}{}%
+\contentsline {subsection}{\numberline {5.3.1}Stakeholders' uses of this view}{27}{}%
+\contentsline {subsection}{\numberline {5.3.2}Database Class Diagram}{28}{}%
+\contentsline {subsection}{\numberline {5.3.3}Operations on Data}{29}{}%
+\contentsline {section}{\numberline {5.4}Deployment View}{29}{}%
+\contentsline {subsection}{\numberline {5.4.1}Stakeholders' uses of this view}{29}{}%
+\contentsline {subsection}{\numberline {5.4.2}Deployment Diagram}{30}{}%
+\contentsline {section}{\numberline {5.5}Design Rationale}{30}{}%

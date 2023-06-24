@@ -1,0 +1,5 @@
+set -tmpdir "/home/aeren/Okul/CENG232/Lab3/lab3_part1/xst/projnav.tmp"
+set -xsthdpdir "/home/aeren/Okul/CENG232/Lab3/lab3_part1/xst"
+elaborate
+-ifn ab.prj
+-ifmt mixed

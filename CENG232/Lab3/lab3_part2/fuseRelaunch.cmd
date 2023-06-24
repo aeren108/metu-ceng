@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "/home/aeren/Okul/CENG232/Lab3/lab3_part2/testbench_isim_beh.exe" -prj "/home/aeren/Okul/CENG232/Lab3/lab3_part2/testbench_beh.prj" "work.testbench" "work.glbl" 

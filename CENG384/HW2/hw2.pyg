@@ -1,0 +1,68 @@
+            import numpy as np
+            import matplotlib.pyplot as plt
+
+            path = "hw2_signal.csv"
+            file = open(path, "r")
+
+            splitted = file.read().split(",")
+            si = int(splitted[0])
+            signal = [float(i) for i in splitted[1:]]
+
+            def x(n):
+                return signal[n - si] if n >= si and n <= si + len(signal) else 0
+
+            def delta5(n):
+                if n == 5:
+                    return 1
+                return 0
+
+            def npoint(N):
+                def npointN(n):
+                    return 1/N if n >= 0 and n <= (N-1) else 0
+                return npointN
+
+            def convolve(n, x, h):
+                sum = 0
+                for k in range(si, si+len(signal)):
+                    sum = sum + x(k)*h(n-k)
+                return sum
+
+            range_arr = range(si, si+len(signal))
+            x_arr = [x(n) for n in range_arr]
+            delta5conv_arr = [convolve(n, x, delta5) for n in range_arr]
+            npoint3conv_arr = [convolve(n, x, npoint(3)) for n in range_arr]
+            npoint5conv_arr = [convolve(n, x, npoint(5)) for n in range_arr]
+            npoint10conv_arr = [convolve(n, x, npoint(10)) for n in range_arr]
+            npoint20conv_arr = [convolve(n, x, npoint(20)) for n in range_arr]
+
+            plt.xlabel("n")
+            plt.ylabel("x[n] * h[n]")
+            plt.title("n vs x[n] * h[n]")
+            plt.plot(range_arr, delta5conv_arr, "r")
+            plt.plot(range_arr, x_arr, "b")
+            plt.show()
+
+            plt.xlabel("n")
+            plt.ylabel("x[n] * m[n]")
+            plt.title("n vs x[n] * m[n] (N=3)")
+            plt.plot(range_arr, npoint3conv_arr)
+            plt.show()
+
+            plt.xlabel("n")
+            plt.ylabel("x[n] * m[n]")
+            plt.title("n vs x[n] * m[n] (N=5)")
+            plt.plot(range_arr, npoint5conv_arr)
+            plt.show()
+
+            plt.xlabel("n")
+            plt.ylabel("x[n] * m[n]")
+            plt.title("n vs x[n] * m[n] (N=10)")
+            plt.plot(range_arr, npoint10conv_arr)
+            plt.show()
+
+            plt.xlabel("n")
+            plt.ylabel("x[n] * m[n]")
+            plt.title("n vs x[n] * m[n] (N=20)")
+            plt.plot(range_arr, npoint20conv_arr)
+            plt.show()
+

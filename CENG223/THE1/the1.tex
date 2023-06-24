@@ -1,0 +1,242 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[dvips]{graphicx}
+\usepackage{fancybox}
+\usepackage{verbatim}
+\usepackage{array}
+\usepackage{latexsym}
+\usepackage{alltt}
+\usepackage{hyperref}
+\usepackage{textcomp}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage{fitch}  % to use fitch
+\usepackage{float}
+\usepackage[hmargin=3cm,vmargin=5.0cm]{geometry}
+%\topmargin=0cm
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+%\setlength{\leftmargin}{-5cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+
+
+\begin{document}
+
+\section*{Student Information } 
+%Write your full name and id number between the colon and newline
+%Put one empty space character after colon and before newline
+Full Name :  Ahmet Eren {\c C}olak \newline
+Id Number :  2587921 
+
+
+% ND example using fitch
+% delete or comment if you intend to use this to generate the vector pdf 
+\section*{Example ND Proof}
+
+Assume that you are asked to prove the following statement using natural deduction for propositional logic.
+\\
+\begin{equation*}
+p \wedge \neg q \rightarrow r, \neg r, p \vdash q.
+\end{equation*}
+
+
+\begin{center}
+	\begin{fitchproof}
+		\fitchline{$p \wedge \neg q \rightarrow r$}{premise}
+		\fitchline{$\neg r$}{premise}
+		\fitchline{$p$}{premise}
+		\subproof{
+			\fitchline{$\neg q$}{assumption}
+			\fitchline{$p \wedge \neg q$}{$\wedge i$ 3,4}
+			\fitchline{$r$}{$\rightarrow e$ 1,5}
+			\fitchline{$\bot$}{$\neg e$ 6,2}
+		}
+		\fitchline{$\neg \neg q$}{$\neg i$ 4--7}
+		\fitchline{$q$}{$\neg \neg e$ 8}
+	\end{fitchproof}
+\end{center}
+\noindent
+\newline
+% Write your answers below the section tags
+\section*{Q. 1}
+\begingroup
+\fontsize{10pt}{11pt}
+\begin{center}
+	\begin{align*}
+		\neg (p \wedge q) \leftrightarrow (\neg q \rightarrow p) &\equiv (\neg (p \wedge q) \rightarrow (\neg q \rightarrow p)) \wedge ((\neg q \rightarrow p) \rightarrow \neg (p \wedge q)) && \text{by logical equivalency for $\leftrightarrow$}\\
+		&\equiv (\neg \neg (p \wedge q) \vee (\neg \neg q \vee p)) \wedge (\neg (\neg \neg q \vee p) \vee \neg (p \wedge q)) && \text{by logical equivalency for $\rightarrow$}\\
+		&\equiv ((p \wedge q) \vee (q \vee p)) \wedge (\neg (q \vee p) \vee \neg (p \wedge q)) && \text{by double negation law}\\
+		&\equiv ((p \wedge q) \vee (q \vee p)) \wedge \neg((q \vee p) \wedge (p \wedge q)) && \text{by the first De Morgan law}\\
+		&\equiv ((q \vee p \vee p) \wedge (q \vee p \vee q)) \wedge \neg((p \wedge q \wedge q) \vee (p \wedge q \wedge p)) && \text{by distributive law}\\
+		&\equiv ((q \vee (p \vee p)) \wedge ((q \vee q) \vee p)) \wedge \neg((p \wedge (q \wedge q)) \vee ((p \wedge p) \wedge q)) && \text{by associative and commutative laws}\\
+		&\equiv ((q \vee p)) \wedge (q \vee p)) \wedge \neg((p \wedge q) \vee (p \wedge q)) && \text{by idempotent law}\\
+		&\equiv (q \vee p) \wedge \neg (p \wedge q) && \text{by idempotent law}
+		&\equiv (q \vee p) \wedge (\neg p \vee \neg q) && \text{by the first De Morgan law}\\
+		&\equiv (p \vee q) \wedge (\neg p \vee \neg q) && \text{by commutative law}
+	\end{align*}
+\end{center}
+\endgroup
+\section*{Q. 2}
+
+\begin{center}
+	\begin{align*}
+		&\textbf{a.  } \forall x \forall y \forall f ((I(x, f) \wedge I(y, f)) \rightarrow \neg \exists z(E(x, z) \wedge E(y, z))) \\
+		&\textbf{b.  } \forall f \exists x (I(x, f) \wedge S(x,x) \wedge \neg \exists y (S(x, y) \wedge y \neq x))\\
+		&\textbf{c.  } \forall j (J(j, m) \rightarrow \exists x \exists y ((A(x, j) \wedge A(y, j) \wedge x \neq y) \rightarrow \neg \exists z (A(z, j) \wedge z \neq x \wedge z \neq y)))\\ 
+		&\text{Note: $m$ is constant and means medicine faculty}
+	\end{align*}
+\end{center}
+
+\section*{Q. 3}
+
+\begin{center}
+	\textbf{a.  } 
+	\begin{fitchproof}
+		\fitchline{$p \vee \neg q$}{premise}
+		\fitchline{$p \vee r$}{premise}
+		\subproof{
+			\fitchline{$ r \rightarrow q $}{assumption}
+			\subproof{
+				\fitchline{$ \neg p $}{assumption}
+				\subproof{
+					\fitchline{$p$}{assumption}
+					\fitchline{$\bot$}{$\neg e$ 4,5}
+					\fitchline{$r$}{$\bot e$ 4}
+					\fitchline{$\neg q$}{$\bot e$ 4}
+				}
+				
+				\subproof{
+					\fitchline{$r$}{assumption}
+				}
+				
+				\subproof{
+					\fitchline{$\neg q$}{assumption}
+				}
+			
+				\fitchline{$r$}{$\vee e$ 5--7, 9}
+				\fitchline{$\neg q$}{$\vee e$ 5--8, 10}
+				\fitchline{$q$}{$\rightarrow e$ 3,11}
+				\fitchline{$\bot$}{$\neg e$ 12,13}
+			}
+			\fitchline{$\neg \neg p$}{$\neg i$ 4--14}
+			\fitchline{$p$}{$\neg \neg e$ 15}
+		}
+		\fitchline{$(r \rightarrow q) \rightarrow p$}{$\rightarrow i$ 3--16}
+		
+	\end{fitchproof}
+
+	\textbf{b.  } 
+	\begin{fitchproof}
+		\subproof{
+			\fitchline{$((q \rightarrow p) \rightarrow q)$}{assumption}
+			\subproof{
+				\fitchline{$\neg q$}{assumption}
+				\subproof{
+					\fitchline{$q \rightarrow p$}{assumption}
+					\fitchline{$q$}{$\rightarrow e$ 1,3}
+					\fitchline{$\bot$}{$\neg e$ 2,4}
+				}
+				\fitchline{$\neg (q \rightarrow p)$}{$\neg i$ 3--5}
+				\fitchline{$\neg(\neg q \vee p)$}{derived proof (3)}
+				\fitchline{$\neg \neg q \wedge \neg p$}{derived proof (2)}
+				\fitchline{$q \wedge \neg p$}{$\neg \neg e$ 8}
+				\fitchline{$q$}{$\wedge e$ 9}
+				\fitchline{$\bot$}{$\neg e$ 2,10}
+			}
+			\fitchline{$\neg \neg q$}{$\neg i$ 2--11}
+			\fitchline{$q$}{$\neg \neg e$ 12}
+		}
+		\fitchline{$((q \rightarrow p) \rightarrow q) \rightarrow q$}{$\rightarrow i$ 1--13}
+	\end{fitchproof}
+\end{center}
+
+\section*{Q. 4}
+
+\begin{center}
+	\textbf{a.  } 
+	\begin{fitchproof}
+		\fitchline{$\neg \forall x (P(x) \rightarrow Q(x))$}{premise}
+		\fitchline{$\neg (P(a) \rightarrow Q(x))$}{$\forall e$ 1}
+		\fitchline{$\neg (\neg P(a) \vee Q(a))$}{derived proof (3)}
+		\fitchline{$\neg \neg P(a) \wedge \neg Q(a)$}{derived proof (2)}
+		\fitchline{$P(a) \wedge \neg Q(a)$}{$\neg \neg e$ 4}
+		\fitchline{$\exists x (P(x) \wedge \neg Q(x))$}{$\exists i$ 1--5}
+	\end{fitchproof}
+\end{center}
+
+\section*{Derived Proofs}
+
+\begin{center}
+	\begin{equation}
+		\neg (p \wedge q) \vdash \neg p \vee \neg q.
+	\end{equation}
+	\begin{fitchproof}
+		\fitchline{$\neg (p \wedge q)$}{premise}
+		\subproof{
+			\fitchline{$\neg (\neg p \vee \neg q)$}{assumption}
+			\subproof{
+				\fitchline{$ \neg p$}{assumption}
+				\fitchline{$\neg p \vee \neg q$}{$\vee i$ 3}
+				\fitchline{$\bot$}{$\neg e$ 2,4}
+			}
+			\fitchline{$\neg \neg p$}{$\neg i$ 3--5}
+			\fitchline{$p$}{$\neg \neg e$ 6}
+			\subproof{
+				\fitchline{$\neg q$}{assumption}
+				\fitchline{$\neg p \vee \neg q$}{$\vee i$ 8}
+				\fitchline{$\bot$}{$\neg e$ 2,9}
+			}
+			\fitchline{$\neg \neg q$}{$\neg i$ 8--10}
+			\fitchline{$q$}{$\neg \neg i$ 11}
+			\fitchline{$p \wedge q$}{$\wedge i$ 7,12}
+			\fitchline{$\bot$}{$\neg e$ 1,13}
+		}
+		\fitchline{$\neg p \vee \neg q$}{$\neg i$ 1,14}
+	\end{fitchproof}
+\end{center}
+
+\begin{center}
+	\begin{equation}
+		\neg (p \vee q) \vdash \neg p \wedge \neg q.
+	\end{equation}
+	\begin{fitchproof}
+		\fitchline{$\neg (p \vee q)$}{premise}
+		\subproof{
+			\fitchline{$\neg (\neg p \wedge \neg q)$}{assumption}
+			\fitchline{$\neg \neg p \vee \neg \neg q$}{derived proof (1)}
+			\fitchline{$p \vee q$}{$\neg \neg e$ 3}
+			\fitchline{$\bot$}{$\neg e$ 1,4}
+		}
+		\fitchline{$\neg p \wedge \neg q$}{$\neg i$ 2--5}
+	\end{fitchproof}
+\end{center}
+
+\begin{center}
+	\begin{equation}
+		p \rightarrow q \vdash \neg p \vee q.
+	\end{equation}
+	\begin{fitchproof}
+		\fitchline{$p \rightarrow q$}{premise}
+		\subproof{
+			\fitchline{$\neg (\neg p \vee q)$}{assumption}
+			\fitchline{$\neg \neg p \wedge \neg q$}{derived proof (2)}
+			\fitchline{$p \wedge \neg q$}{$\neg \neg e$ 3}
+			\fitchline{$p$}{$\wedge e$ 4}
+			\fitchline{$\neg q$}{$\wedge e$ 4}
+			\fitchline{$q$}{$\rightarrow e$ 1,5}
+			\fitchline{$\bot$}{$\neg e$ 6,7}
+		}
+		\fitchline{$\neg \neg (\neg p \vee q)$}{$\neg e$ 2--8}
+		\fitchline{$\neg p \vee q$}{$\neg \neg e$ 9}
+	\end{fitchproof}
+\end{center}
+
+% add / remove sections etc as needed 
+% use your own format
+
+\end{document}
+
