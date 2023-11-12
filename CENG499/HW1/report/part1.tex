@@ -1,0 +1,231 @@
+\documentclass[12pt,a4paper, margin=1in]{article}
+\usepackage{fullpage}
+\usepackage{amsfonts, amsmath, pifont}
+\usepackage{amsthm}
+\usepackage{amsmath}
+
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ % total={210mm,297mm},
+ left=10mm,
+ right=10mm,
+ top=5mm,
+ bottom=10mm,
+ }
+ \author{
+  Ahmet Eren Çolak\\
+  \texttt{e2587921@ceng.metu.edu.tr}
+}
+\title{\textbf{CENG 499 - Introduction to Machine Learning} \\
+Homework 1 - Part 1}
+\begin{document}
+\maketitle
+
+\noindent\rule{19cm}{1.2pt}
+\newcommand\ddfrac[2]{\frac{\displaystyle #1}{\displaystyle #2}}
+
+\section*{Derivatives for the Regression Problem}
+
+\begin{equation}
+    O^{(1)}_k = \sigma{ \left ( \sum_{i=0}^{} O^{(0)}_i \cdot a^{(0)}_{ik} \right ) } 
+\end{equation}
+
+\begin{equation}
+    O^{(2)}_0 = \sum_{k=0}^{} O^{(1)}_k \cdot a^{(1)}_{k0}
+\end{equation}
+
+\bigskip
+General rule for partial derivatives of weights in the second layer:
+\begin{equation*}
+    \frac{\partial E(x)}{\partial a^{(1)}_{k0}} = \frac{\partial (y-O^{(2)}_0)^2}{\partial O^{(2)}_0}  \frac{\partial O^{(2)}_0}{\partial a^{(1)}_{k0}} = 2(y-O^{(2)}_0)\frac{\partial O^{(2)}_0}{\partial a^{(1)}_{k0}}
+\end{equation*}
+
+Using the equation 2, it can be deduced that:
+
+\begin{equation*}
+    \frac{\partial O^{(2)}_0}{\partial a^{(1)}_{k0}} = O^{(1)}_k
+\end{equation*}
+
+\begin{equation}
+    \frac{\partial E(x)}{\partial a^{(1)}_{k0}} = 2(y-O^{(2)}_0) O^{(1)}_k
+\end{equation}
+
+\bigskip
+
+General rule for partial derivatives of weights in the first layer:
+\begin{equation*}
+    \frac{\partial E(x)}{\partial a^{(0)}_{ik}} = \frac{\partial (y-O^{(2)}_0)^2}{\partial O^{(2)}_0}  \frac{\partial O^{(2)}_0}{\partial O^{(1)}_k} \frac{\partial O^{(1)}_k}{\partial a^{(0)}_{ik}} = 2(y-O^{(2)}_0)a^{(1)}_{k0} \frac{\partial O^{(1)}_k}{\partial a^{(0)}_{ik}}
+\end{equation*}
+
+To find the derivative of the sigmoid function, it is written as:
+
+\begin{equation*}
+    \sigma (x) = (1 + e^{-x})^{-1}
+\end{equation*}
+
+\begin{equation*}
+    \frac{d\sigma (x)}{dx} = (1 + e^{-x})^{-2}\cdot (e^{-x}) = \frac{1}{1+e^{-x}}\frac{(1+e^{-x}) - 1}{1+e^{-x}} = \frac{1}{1+e^{-x}} \left [  \frac{1+e^{-x}}{1+e^{-x}} - \frac{1}{1+e^{-x}} \right ] 
+\end{equation*}
+\begin{equation*}
+    \frac{d\sigma (x)}{dx} = \sigma (x) (1 - \sigma (x))
+\end{equation*}
+
+\bigskip
+
+Then general rule for partial derivatives of weights in the first layer can be found.
+
+\begin{equation}
+    \frac{\partial E(x)}{\partial a^{(0)}_{ik}} = 2(y-O^{(2)}_0)a^{(1)}_{k0}\cdot \sigma(O^{(1)}_k)(1-\sigma(O^{(1)}_k))O^{(0)}_i
+\end{equation}
+
+\bigskip
+
+All update rules for weights in the second layer can be found using the equation 3.
+
+\begin{equation*}
+    a^{(1)}_{00} := a^{(1)}_{00} - \alpha \left [ 2(y - O^{2}_0)O^{(1)}_0 \right ]
+\end{equation*}
+\begin{equation*}
+    a^{(1)}_{10} := a^{(1)}_{01} - \alpha \left [ 2(y - O^{2}_0)O^{(1)}_1 \right ]
+\end{equation*}
+\begin{equation*}
+    a^{(1)}_{20} := a^{(1)}_{02} - \alpha \left [ 2(y - O^{2}_0)O^{(1)}_2 \right ]
+\end{equation*}
+\begin{equation*}
+    a^{(1)}_{30} := a^{(1)}_{03} - \alpha \left [ 2(y - O^{2}_0)O^{(1)}_3 \right ]
+\end{equation*}
+
+All update rules for weights in the first layer can be found using the equation 4.
+
+\begin{equation*}
+    a^{(0)}_{01} := a^{(1)}_{01} - \alpha \left [ 2(y - O^{2}_0)a^{(1)}_{10} \sigma(O^{(1)}_1)(1-\sigma(O^{(1)}_1)) O^{(0)}_0\right ]
+\end{equation*}
+\begin{equation*}
+    a^{(0)}_{02} := a^{(1)}_{02} - \alpha \left [ 2(y - O^{2}_0)a^{(1)}_{20} \sigma(O^{(1)}_2)(1-\sigma(O^{(1)}_2)) O^{(0)}_0\right ]
+\end{equation*}
+\begin{equation*}
+    a^{(0)}_{03} := a^{(1)}_{03} - \alpha \left [ 2(y - O^{2}_0)a^{(1)}_{30} \sigma(O^{(1)}_3)(1-\sigma(O^{(1)}_3)) O^{(0)}_0\right ]
+\end{equation*}
+
+\bigskip
+
+\begin{equation*}
+    a^{(0)}_{11} := a^{(1)}_{11} - \alpha \left [ 2(y - O^{2}_0)a^{(1)}_{10} \sigma(O^{(1)}_1)(1-\sigma(O^{(1)}_1)) O^{(0)}_1\right ]
+\end{equation*}
+\begin{equation*}
+    a^{(0)}_{12} := a^{(1)}_{12} - \alpha \left [ 2(y - O^{2}_0)a^{(1)}_{20} \sigma(O^{(1)}_2)(1-\sigma(O^{(1)}_2)) O^{(0)}_1\right ]
+\end{equation*}
+\begin{equation*}
+    a^{(0)}_{13} := a^{(1)}_{13} - \alpha \left [ 2(y - O^{2}_0)a^{(1)}_{30} \sigma(O^{(1)}_3)(1-\sigma(O^{(1)}_3)) O^{(0)}_1\right ]
+\end{equation*}
+
+\bigskip
+
+\begin{equation*}
+    a^{(0)}_{21} := a^{(1)}_{21} - \alpha \left [ 2(y - O^{2}_0)a^{(1)}_{10} \sigma(O^{(1)}_1)(1-\sigma(O^{(1)}_1)) O^{(0)}_2\right ]
+\end{equation*}
+\begin{equation*}
+    a^{(0)}_{22} := a^{(1)}_{22} - \alpha \left [ 2(y - O^{2}_0)a^{(1)}_{20} \sigma(O^{(1)}_2)(1-\sigma(O^{(1)}_2)) O^{(0)}_2\right ]
+\end{equation*}
+\begin{equation*}
+    a^{(0)}_{23} := a^{(1)}_{23} - \alpha \left [ 2(y - O^{2}_0)a^{(1)}_{30} \sigma(O^{(1)}_3)(1-\sigma(O^{(1)}_3)) O^{(0)}_2\right ]
+\end{equation*}
+
+\bigskip \bigskip
+
+\section*{Derivatives for the Classification Problem}
+
+\begin{equation}
+    O^{(1)}_k = \sigma{ \left ( \sum_{i=0}^{} O^{(0)}_i \cdot a^{(0)}_{ik} \right ) } 
+\end{equation}
+\begin{equation}
+    X^{(2)}_n = \sum_{k=0}^{} O^{(1)}_k \cdot a^{(1)}_{kn}  
+\end{equation}
+\begin{equation}
+    O^{(2)}_n = softmax( X^{(2)}_n,  X^{(2)})
+\end{equation}
+
+\bigskip
+
+General rule for partial derivatives of weights in the second layer:
+
+\begin{equation}
+    \frac{\partial E(x)}{\partial a^{(1)}_{kn}} = \frac{\partial CE(l, O^{(2)})}{\partial O^{(2)}_n} \frac{\partial O^{(2)}_n}{\partial X^{(2}_n}\frac{\partial X^{(2)}_n}{\partial a^{(1)}_{kn}}
+\end{equation}
+
+\bigskip
+
+\begin{equation*}
+    \frac{\partial E(x)}{\partial a^{(1)}_{kn}} = -l_n\frac{1}{O^{(2)}_n} \frac{\partial O^{(2)}_n}{\partial X^{(2)}_n}\frac{\partial X^{(2)}_n}{\partial a^{(1)}_{kn}}
+\end{equation*}
+
+Partial derivative of $O^{(2)}_n$ with respect to $X^{(2)}_n$ can be calculated as below:
+
+\begin{equation*}
+    \frac{\partial log(O^{(2)}_n)}{\partial X^{(2)}_n} = \frac{1}{O^{(2)}_n} \frac{\partial log(O^{(2)}_n)}{\partial X^{(2)}_n}
+\end{equation*}
+\begin{equation*}
+    \frac{\partial O^{(2)}_n}{\partial X^{(2)}_n} = O^{(2)}_n \frac{\partial log(O^{(2)}_n)}{\partial X^{(2)}_n}
+\end{equation*}
+\begin{equation*}
+    log(O^{(2)}_n) = log \left ( \frac{e^{X^{(2)}_n}}{\sum_{i=0}} e^{X^{(2)}_i} \right ) = X^{(2)}_n - log \left ( \sum_{i=0}} e^{X^{(2)}_i}  \right )
+\end{equation*}
+\begin{equation*}
+    \frac{\partial log(O^{(2)}_n)}{\partial X^{(2)}_n} = 1 - \frac{1}{\sum_{i=0} e^{X^{(2)}_i}}e^{X^{(2)}_n} 
+\end{equation*}
+\begin{equation*}
+    \frac{\partial O^{(2)}_n}{\partial X^{(2)}_n} = O^{(2)}_n (1 - O^{(2)}_n)
+\end{equation*}
+
+\bigskip
+
+Using this equality, the general rule for partial derivative for second layer weights can be calculated.
+
+\begin{equation}
+    \frac{\partial E(x)}{\partial a^{(1)}_{kn}} = -l_n(1 - O^{(2)}_n)O^{(1)}_k
+\end{equation}
+
+All update rules for weights in the second layer can be found using equation 9.
+
+\begin{equation*}
+    a^{(1)}_{00} := a^{(1)}_{00} - l_n(1-O^{(2)}_0)O^{(1)}_0
+\end{equation*}
+\begin{equation*}
+    a^{(1)}_{10} := a^{(1)}_{10} - l_n(1-O^{(2)}_0)O^{(1)}_1
+\end{equation*}
+\begin{equation*}
+    a^{(1)}_{20} := a^{(1)}_{20} - l_n(1-O^{(2)}_0)O^{(1)}_2
+\end{equation*}
+\begin{equation*}
+    a^{(1)}_{30} := a^{(1)}_{30} - l_n(1-O^{(2)}_0)O^{(1)}_3
+\end{equation*}
+
+\begin{equation*}
+    a^{(1)}_{01} := a^{(1)}_{01} - l_n(1-O^{(2)}_1)O^{(1)}_0
+\end{equation*}
+\begin{equation*}
+    a^{(1)}_{11} := a^{(1)}_{11} - l_n(1-O^{(2)}_1)O^{(1)}_1
+\end{equation*}
+\begin{equation*}
+    a^{(1)}_{21} := a^{(1)}_{21} - l_n(1-O^{(2)}_1)O^{(1)}_2
+\end{equation*}
+\begin{equation*}
+    a^{(1)}_{31} := a^{(1)}_{31} - l_n(1-O^{(2)}_1)O^{(1)}_3
+\end{equation*}
+
+\begin{equation*}
+    a^{(1)}_{02} := a^{(1)}_{02} - l_n(1-O^{(2)}_2)O^{(1)}_0
+\end{equation*}
+\begin{equation*}
+    a^{(1)}_{12} := a^{(1)}_{12} - l_n(1-O^{(2)}_2)O^{(1)}_1
+\end{equation*}
+\begin{equation*}
+    a^{(1)}_{20} := a^{(1)}_{22} - l_n(1-O^{(2)}_2)O^{(1)}_2
+\end{equation*}
+\begin{equation*}
+    a^{(1)}_{30} := a^{(1)}_{32} - l_n(1-O^{(2)}_2)O^{(1)}_3
+\end{equation*}
+
+
+\end{document}
