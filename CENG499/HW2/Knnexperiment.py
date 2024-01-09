@@ -68,7 +68,7 @@ def confidence_interval(data):
 
     return mean - 1.96 * std / np.sqrt(len(data)), mean + 1.96 * std / np.sqrt(len(data))
 
-def plot_confidence_interval(x, top, bottom, color='#2187bb', horizontal_line_width=0.2):
+def plot_confidence_interval(x, top, bottom, color='#2187bb', horizontal_line_width=0.01):
     mean = (top + bottom ) / 2
     left = x - horizontal_line_width / 2
     right = x + horizontal_line_width / 2
