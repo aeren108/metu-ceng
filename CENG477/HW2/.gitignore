@@ -1,3 +1,5 @@
 .vscode/
 rasterizer
 *.ppm
+*.png
+
