@@ -1,0 +1,26 @@
+123.54 78
+10e1
+.25
+12
+14E+2
+2e-2
+address 142.42.5.1    
+gateway 45.5.5.5    
+mask 124.0.0.1
+
+reset
+
+reset
+
+45
+6.67
+12.4
+.5e-1
+mask 123.5.12.4
+gateway 45.65.2.
+reset 
+5
+çakalala2
+65hheax
+_lkskf2783
+resetti
