@@ -1,0 +1,45 @@
+Group Members:
+
+1) Murat Bolu
+2) Ahmet Eren Çolak
+3) Kaan Karaçanta
+
+For the first kit you take:
+
+Main Board Number : 66 (It is written on the orange socket inside the ADC input module.)
+Mikroboard Number : 78 (It is written on the MikroBoard below the programmer/debugger selection switch.)
+
+Fill in below items as OK or Fail. If you write Fail for any item, then you should explain the errors you get.
+
+ * Programming the PIC18F8722 microcontroller: OK
+ * LCD check: OK
+ * 7-Segment displays check: OK
+ * ADC check: OK
+ * LEDs check: OK
+ * Buttons check: OK
+ * UART1 check: OK
+ * Piezo Buzzer check: OK
+ 
+
+---
+
+
+If you need to change your kit due to a failure, DO NOT erase upper log belonging your first kit and go on by updating below. 
+
+Main Board Number : ? (It is written on the orange socket inside the ADC input module.)
+Mikroboard Number : ? (It is written on the MikroBoard below the programmer/debuller selection switch.)
+
+Fill in below items as OK or Fail. If you write Fail for any item, then you should explain the errors you get.
+
+ * Programming the PIC18F8722 microcontroller: ?
+ * LCD check: ?
+ * 7-Segment displays check: ?
+ * ADC check: ?
+ * LEDs check: ?
+ * Buttons check: ?
+ * UART1 check: ?
+ * Piezo Buzzer check: ?
+ 
+---
+
+For any other set you take again, copy-paste lines 25-to-42 below this line, and update them.

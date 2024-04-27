@@ -15,3 +15,11 @@ CENG232/*.pptx
 CENG232/Xilinx.lic
 CENG232/logisim.jar
 CENG435/THE2/.vagrant/
+
+**/.DS_Store
+**/.pyc
+
+__pycache__/
+*.py[cod]
+*$py.class
+*.class
