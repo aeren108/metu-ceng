@@ -1,10 +1,9 @@
-using namespace std;
-
 #include <iostream>
 #include <fstream>
-#include "sample02.tab.hh"
+
+#include "parser.tab.hh"
 #include "FlexLexer.h"
-#include "MyFlexLexer.h"
+#include "Lexer.h"
 
 Lexer::Lexer()
 {

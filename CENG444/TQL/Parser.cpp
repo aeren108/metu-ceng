@@ -1,19 +1,18 @@
-using namespace std;
-
 #include <iostream>
 #include <fstream>
 #include <string.h>
 
 #include "parser.tab.hh"
-#include "MyParser.h"
+#include "Parser.h"
 #include "FlexLexer.h"
-#include "MyFlexLexer.h"
+#include "Lexer.h"
 
 Parser::Parser()
 {
-   parseError=false;
-   base=nullptr;
-   lexer=nullptr;
+   base = nullptr;
+   lexer = nullptr;
+
+   outfile.open("project01syn.txt", std::ios::trunc);
 }
 
 Parser::~Parser()
@@ -23,82 +22,119 @@ Parser::~Parser()
    delete base;
 }
 
-int Parser::lex(yy::MyParserBase::value_type *lval)
+int Parser::lex(yy::ParserBase::value_type *lval)
 {
    return lexer->lex(lval);
 }
 
-void Parser::parse(yy::MyParserBase *base, ifstream *is)
+void Parser::parse(yy::ParserBase *base, std::ifstream *is)
 {
-   this->base=base;
-   lexer=new Lexer();
+   this->base = base;
+   lexer = new Lexer();
    lexer->switch_streams(is);
    base->parse();
 }
 
-int Parser::getId()
+void Parser::handle_declaration() 
 {
-   return yy::MyParserBase::token::ID;
+   declarations++;
 }
 
-int Parser::getStr()
+void Parser::handle_eval()
 {
-   return yy::MyParserBase::token::STR;
+   evaluations++;
 }
 
-int Parser::getNumber()
+void Parser::handle_while()
 {
-   return yy::MyParserBase::token::NUM;
+   while_stmts++;
 }
 
-void Parser::nameFromId()
+void Parser::handle_if()
 {
+   if_stmts++;
 }
 
-void Parser::nameFromStr()
+void Parser::handle_ifelse()
 {
+   ifelse_stmts++;
 }
 
-void Parser::setValue(JValueType t)
+void Parser::handle_append()
 {
-   // Mock action using recognized value type
-   switch (t)
+   append_stmts++;
+}
+
+void Parser::handle_compound()
+{
+   compound_stmts++;
+}
+
+void Parser::handle_table()
+{
+   table_literals++;
+}
+
+void Parser::handle_func()
+{
+   functions++;
+}
+
+void Parser::handle_select()
+{
+   selects++;
+}
+
+void Parser::handle_mutation()
+{
+   mutations++;
+}
+
+void Parser::handle_materialization()
+{
+   materializations++;
+}
+
+void Parser::new_line()
+{
+   lineno++;
+}
+
+void Parser::log_error()
+{
+   error_exists = true;
+
+   if (lineno != last_err_lineno) 
    {
-      case JValueType::Str:
-         break;
-      case JValueType::Num:
-         break;
-      case JValueType::Dict:
-         break;
-      case JValueType::Arr:
-         break;
+      outfile << "Line " << lineno << ": Syntax error." << std::endl;
+      last_err_lineno = lineno;
    }
+   
 }
 
-void Parser::storeMember()
+void Parser::log_report()
 {
-   // Mock action to store recognized member
-}
+   if (error_exists)
+      return;
 
-void Parser::storeArrElement()
-{
-   // Mock action to store array element
-}
-
-void Parser::setParseError()
-{
-   parseError=true;
-}
-
-bool Parser::getParseError()
-{
-   return parseError;
+   outfile << declarations << std::endl;
+   outfile << evaluations << std::endl;
+   outfile << while_stmts << std::endl;
+   outfile << if_stmts << std::endl;
+   outfile << ifelse_stmts << std::endl;
+   outfile << append_stmts << std::endl;
+   outfile << compound_stmts << std::endl;
+   outfile << table_literals << std::endl;
+   outfile << functions << std::endl;
+   outfile << selects << std::endl;
+   outfile << mutations << std::endl;
+   outfile << materializations << std::endl;
 }
 
 extern Parser *parser;
 
-void yy::MyParserBase::error(const std::string &msg)
+void yy::ParserBase::error(const std::string &msg)
 {
-   parser->setParseError();
-   cout << "Not recognized!" << endl;
+   std::cout << msg << std::endl;
+   std::cout << "Not recognized!" << std::endl;
 }

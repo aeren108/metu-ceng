@@ -1,5 +1,3 @@
-using namespace std;
-
 #include <iostream>
 #include <fstream>
 
@@ -12,20 +10,23 @@ Parser *parser;
 
 int main(int argc, char **argv)
 {
-   std::ifstream is("sample02.txt");
+   if (argc != 2)
+   {
+      std::cout << "Specify the input file.\nExample usage: ./parser file.tql" << std::endl;
+      return -1;
+   }
+
+   std::ifstream is(argv[1]);
 
    if (is.is_open())
    {
       parser = new Parser();
-      yy::MyParserBase *base=new yy::MyParserBase(parser);
+      yy::ParserBase *base = new yy::ParserBase(parser);
 
       parser->parse(base, &is);
 
       is.close();
-
-      if (!parser->getParseError())
-         std::cout << "Recognized JSON-Like source." << std::endl;
-
+      parser->log_report();
       delete parser;
    }
 
